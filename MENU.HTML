@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Neutre - Église</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Style global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    /* Niveau 1 : Menu */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px; /* Augmentation de la hauteur */
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+    nav:hover {
+      background-color: #f0f0f0;
+    }
+
+    .logo {
+      width: 140px;
+      height: 90px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a {
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      position: relative;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #000;
+      background-color: #ffcc00;
+      transform: translateY(-3px);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background-color: #555;
+      transition: width 0.3s;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    /* Menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+      background-color: #333;
+      height: 4px;
+      width: 30px;
+      margin: 2px 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 40;
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+      overflow-y: auto; /* Pour rendre le menu défilant */
+    }
+
+    #mobile-menu.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    #mobile-menu .menu-content {
+      background-color: #ffffff;
+      width: 90%;
+      max-width: 320px;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      animation: slideIn 0.3s ease-in-out;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #mobile-menu .menu-content .logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    #mobile-menu .menu-content h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #mobile-menu .menu-content a {
+      display: block;
+      margin: 15px 0;
+      font-size: 18px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    #mobile-menu .menu-content a:hover {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Niveau 1 : Menu principal -->
+  <nav>
+    <img src="Logo.png" alt="Logo de l'Église" class="logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#cultes" onclick="window.location.href='nos cultes.html'">Nos cultes</a></li>
+      <li><a href="#apropos" onclick="window.location.href='propos.html'">À propos</a></li>
+      <li><a href="#contact" onclick="window.location.href='dons.html'">Faire un don</a></li>
+      <li><a href="#faireunDon" onclick="window.location.href='contacts.html'">Rejoignez-nous</a></li>
+    </ul>
+  </nav>
+
+  <!-- Niveau 2 : Menu burger pour mobile -->
+  <div id="mobile-menu">
+    <div class="menu-content">
+      <img src="Logo.png" alt="Logo de l'Église" class="logo">
+      <h2>Règne de Dieu</h2>
+      <a href="#accueil" onclick="toggleMenu()">Accueil</a>
+      <a href="#cultes" onclick="toggleMenu()">Nos cultes</a>
+      <a href="#temoignages" onclick="toggleMenu()">Témoignages</a>
+      <a href="#evenements" onclick="toggleMenu()">Événements</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('open');
+      }
+    });
+
+    menuToggle.addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>

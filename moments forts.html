@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Moments</title>
+    <style>
+        /* General Reset */
+        body, h1, h2, h3, p, ul, li, a, img {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card .card-content {
+            padding: 1rem;
+        }
+
+        .card .card-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card .card-content p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Strong Moments</a>
+            <div>
+                <a href="#videos">Short Videos</a>
+                <a href="#moments">Strong Moments</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Strong Moments</h1>
+        <p>Relive powerful moments, watch inspiring videos, and hear heartfelt testimonials.</p>
+    </section>
+
+    <!-- Short Videos Section -->
+    <section id="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Short Videos</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Video Thumbnail">
+                    <div class="card-content">
+                        <h3>Video Title 1</h3>
+                        <p>Short description of the video content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Video Thumbnail">
+                    <div class="card-content">
+                        <h3>Video Title 2</h3>
+                        <p>Short description of the video content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong Moments Section -->
+    <section id="moments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Strong Moments</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Moment Image">
+                    <div class="card-content">
+                        <h3>Moment Title 1</h3>
+                        <p>A short story about this strong moment.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Moment Image">
+                    <div class="card-content">
+                        <h3>Moment Title 2</h3>
+                        <p>A short story about this strong moment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonials</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>User Name 1</h3>
+                        <p>"This platform has truly inspired me!"</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>User Name 2</h3>
+                        <p>"The videos and stories are so uplifting."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Contact us: <a href="mailto:info@strongmoments.com">info@strongmoments.com</a></p>
+        <p>&copy; 2025 Strong Moments. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

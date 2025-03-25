@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/logo.png">
+    <title>Culte en Direct - Église Règne de Dieu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+rel="stylesheet">
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+<!-- Niveau 1 : Menu principal -->
+<nav>
+    <img src="assets/images/logo.png" alt="Logo de l'Église" class="logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nos cultes.html">Nos cultes</a></li>
+      <li><a href="propos.html">propos</a></li>
+      <li><a href="dons.html">dons</a></li>
+      <li><a href="contacts.html">contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- Niveau 2 : Menu burger pour mobile -->
+  <div id="mobile-menu">
+    <div class="menu-content">
+      <span class="close-menu">&times;</span>
+      <img src="assets/images/logo.png" alt="Logo de l'Église" class="logo">
+      <h2>Règne de Dieu</h2>
+      <a href="index.html">Accueil</a>
+      <a href="nos cultes.html">Nos cultes</a>
+      <a href="propos.html">propos</a>
+      <a href="dons.html">dons</a>
+      <a href="contacts.html">contacts</a>
+    </div>
+  </div>
+  
+  <script src="assets/js/scripts.js"></script>
+    <style>
+            :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-background: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            height:250px;
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            font-size:xx-large;
+            padding-top: 30px;
+        }
+        /* Styles pour les écrans plus petits */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 30%;
+    position: absolute;
+    top: 18%;
+    right: 67px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 82vh; /* Ajouté pour permettre le défilement */
+    overflow-y: auto; /* Ajouté pour permettre le défilement */
+    
+
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+  }
+
+  .menu-toggle .bar {
+    width: 45px;
+    height: 5px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: 0.2s;
+
+  }
+
+  .menu-toggle.open .bar:nth-child(1) {
+   transform: rotate(360deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-360deg) translate(-5px, 6px);
+  }
+}
+        .countdown {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            margin-top: 40px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            height: 350px;
+        }
+
+        .countdown-timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .live-stream {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .live-stream img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .live-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-youtube {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .btn-youtube:hover {
+            background-color: #cc0000;
+        }
+
+        .btn-facebook {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        .btn-facebook:hover {
+            background-color: #1559b8;
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        .previous-streams {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stream-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stream-card {
+            background-color: var(--background-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .stream-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stream-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .stream-info {
+            padding: 0.5rem;
+        }
+
+        .stream-title {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .stream-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .live-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stream-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <section class="countdown">
+            <h1>Culte en Direct - EGLISE REGNE DE DIEU</h1><hr>
+            <h2>Prochain culte dans :</h2>
+            <div class="countdown-timer" id="countdown"></div>
+        </section>
+
+        <section class="live-stream">
+            <img src="https://via.placeholder.com/1200x675.png?text=Culte+en+Direct" alt="Culte en Direct" id="live-image">
+            <div class="live-buttons">
+                <a href="#" class="btn btn-youtube" id="youtube-link">
+                    <i class="fab fa-youtube"></i> Voir sur YouTube
+                </a>
+                <a href="#" class="btn btn-facebook" id="facebook-link">
+                    <i class="fab fa-facebook"></i> Voir sur Facebook
+                </a>
+            </div>
+        </section>
+
+        <section class="previous-streams">
+            <h2>Cultes précédents</h2>
+            <div class="stream-grid" id="previous-streams">
+                <!-- Les cultes précédents seront ajoutés ici dynamiquement -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Fonction pour calculer le temps restant jusqu'au prochain culte
+        function getNextCulteTime() {
+            const now = new Date();
+            const nextCulte = new Date(now);
+            nextCulte.setHours(21, 0, 0, 0);
+            if (now > nextCulte) {
+                nextCulte.setDate(nextCulte.getDate() + 1);
+            }
+            return nextCulte;
+        }
+
+        // Fonction pour mettre à jour le chronomètre
+        function updateCountdown() {
+            const now = new Date();
+            const nextCulte = getNextCulteTime();
+            const timeLeft = nextCulte - now;
+
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                // Le culte commence, mettez à jour l'interface
+                document.getElementById('live-image').src = "https://via.placeholder.com/1200x675.png?text=Culte+en+Cours";
+                document.getElementById('youtube-link').style.display = 'inline-flex';
+                document.getElementById('facebook-link').style.display = 'inline-flex';
+            } else {
+                document.getElementById('youtube-link').style.display = 'none';
+                document.getElementById('facebook-link').style.display = 'none';
+            }
+        }
+
+        // Mettre à jour le chronomètre toutes les secondes
+        setInterval(updateCountdown, 1000);
+
+        // Appeler updateCountdown immédiatement pour éviter un délai initial
+        updateCountdown();
+
+        // Simuler des cultes précédents
+        const previousCultes = [
+            { title: "Culte du 15 août 2023", date: "15 août 2023", image: "https://via.placeholder.com/300x169.png?text=Culte+15+août", link: "#" },
+            { title: "Culte du 14 août 2023", date: "14 août 2023", image: "https://via.placeholder.com/300x169.png?text=Culte+14+août", link: "#" },
+            { title: "Culte du 13 août 2023", date: "13 août 2023", image: "https://via.placeholder.com/300x169.png?text=Culte+13+août", link: "#" },
+            { title: "Culte du 12 août 2023", date: "12 août 2023", image: "https://via.placeholder.com/300x169.png?text=Culte+12+août", link: "#" },
+        ];
+
+        // Fonction pour afficher les cultes précédents
+        function displayPreviousCultes() {
+            const container = document.getElementById('previous-streams');
+            previousCultes.forEach(culte => {
+                const culteElement = document.createElement('div');
+                culteElement.className = 'stream-card';
+                culteElement.innerHTML = `
+                    <a href="${culte.link}">
+                        <img src="${culte.image}" alt="${culte.title}">
+                        <div class="stream-info">
+                            <div class="stream-title">${culte.title}</div>
+                            <div class="stream-date">${culte.date}</div>
+                        </div>
+                    </a>
+                `;
+                container.appendChild(culteElement);
+            });
+        }
+
+        // Afficher les cultes précédents au chargement de la page
+        displayPreviousCultes();
+
+        
+    </script>
+     <script src="assets/js/script.js"></script>
+</body>
+</html>

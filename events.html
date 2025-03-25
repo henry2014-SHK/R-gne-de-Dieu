@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/logo.png">
+    <title>Événements - Église Règne de Dieu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #0f0f0f;
+            --text-color: #ffffff;
+            --card-background: #1f1f1f;
+            --hover-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align:center;
+        }
+
+        .container {
+            display:inline-block;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align:center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            width:100%;
+        }
+
+        .event-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            margin-left: 60%;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width:100%;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-image {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .event-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover .event-image img {
+            transform: scale(1.05);
+        }
+
+        .event-info {
+            padding: 1rem;
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .event-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .event-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-play {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-play:hover {
+            background-color: #27ae60;
+        }
+
+        .btn-youtube {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .btn-youtube:hover {
+            background-color: #cc0000;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .event-card {
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Événements de l'Église Règne de Dieu</h1> <br>
+        </header>
+        <main class="events-grid">
+            <!-- Répétez ce bloc pour chaque événement -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://via.placeholder.com/300x169.png?text=Événement+1" alt="Événement 1">
+                </div>
+                <div class="event-info">
+                    <h2 class="event-title">Conférence Annuelle</h2>
+                    <p class="event-date">15 Août 2023</p>
+                    <div class="event-buttons">
+                        <button class="btn btn-play" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                            <i class="fas fa-play"></i> Regarder
+                        </button>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-youtube">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div> <br>
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://via.placeholder.com/300x169.png?text=Événement+2" alt="Événement 2">
+                </div>
+                <div class="event-info">
+                    <h2 class="event-title">Retraite Spirituelle</h2>
+                    <p class="event-date">22 Septembre 2023</p>
+                    <div class="event-buttons">
+                        <button class="btn btn-play" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                            <i class="fas fa-play"></i> Regarder
+                        </button>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-youtube">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div><br>
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://via.placeholder.com/300x169.png?text=Événement+2" alt="Événement 3">
+                </div>
+                <div class="event-info">
+                    <h2 class="event-title">Retraite Spirituelle</h2>
+                    <p class="event-date">22 Septembre 2023</p>
+                    <div class="event-buttons">
+                        <button class="btn btn-play" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                            <i class="fas fa-play"></i> Regarder
+                        </button>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-youtube">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            <!-- Ajoutez d'autres événements ici -->
+        </main>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="videoPlayer" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal(videoUrl) {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoUrl;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = '';
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('videoModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.event-card').forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>

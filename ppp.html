@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Pastor</title>
+    <style>
+        /* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #f0a500;
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.home-section {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.home-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section .content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-section .pastor-photo, .family-section .family-photo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vision-section, .mission-section, .couple-section {
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.vision-section h2, .mission-section h2, .couple-section h2 {
+    margin-bottom: 1rem;
+    color: #f0a500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer ul a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section .content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+    </style>
+    
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">About Our Pastor</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About the Pastor</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#family">Family</a></li>
+                <li><a href="#couple">Pastoral Couple</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="container">
+            <h1>Welcome to Our Pastor's Page</h1>
+            <p>Learn more about our pastor's journey, vision, and mission.</p>
+        </div>
+    </section>
+
+    <!-- About the Pastor Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Meet Our Pastor</h2>
+            <div class="content">
+                <img src="pastor.jpg" alt="Pastor's Photograph" class="pastor-photo">
+                <div class="text">
+                    <h3>Pastor's Full Name</h3>
+                    <p>A brief biography including background, education, and key experiences. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision-section">
+        <div class="container">
+            <h2>Our Vision</h2>
+            <p>Our vision is to inspire and nurture faith, fostering a community rooted in love, service, and spiritual growth.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission-section">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>We aim to provide spiritual guidance, empower individuals to live purpose-driven lives, and spread the message of hope and redemption.</p>
+        </div>
+    </section>
+
+    <!-- Family Section -->
+    <section id="family" class="family-section">
+        <div class="container">
+            <h2>Meet the Family</h2>
+            <div class="content">
+                <img src="family.jpg" alt="Family Photograph" class="family-photo">
+                <p>Introducing the pastor's family: spouse, children, and their support in ministry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pastoral Couple Section -->
+    <section id="couple" class="couple-section">
+        <div class="container">
+            <h2>Our Pastoral Couple</h2>
+            <p>Our pastoral couple embodies shared values of faith, love, and commitment. Together, they lead with dedication and compassion.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Contact us: <a href="mailto:contact@pastorpage.com">contact@pastorpage.com</a></p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+            <p>&copy; 2025 About Our Pastor. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script> 
+    // Smooth Scrolling for Navigation Links
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            const targetId = event.target.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70, // Adjust for sticky navbar height
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+</script>
+</html>

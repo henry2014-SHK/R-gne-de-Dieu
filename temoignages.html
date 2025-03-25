@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/logo.png">
+  <title>Église Règne de Dieu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+rel="stylesheet">
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<!-- Niveau 1 : Menu principal -->
+  <nav>
+    <img src="assets/images/logo.png" alt="Logo de l'Église" class="logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nos cultes.html">Nos cultes</a></li>
+      <li><a href="propos.html">propos</a></li>
+      <li><a href="dons.html">dons</a></li>
+      <li><a href="contacts.html">contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- Niveau 2 : Menu burger pour mobile -->
+  <div id="mobile-menu">
+    <div class="menu-content">
+      <span class="close-menu">&times;</span>
+      <img src="assets/images/logo.png" alt="Logo de l'Église" class="logo">
+      <h2>Règne de Dieu</h2>
+      <a href="index.html">Accueil</a>
+      <a href="nos cultes.html">Nos cultes</a>
+      <a href="propos.html">propos</a>
+      <a href="dons.html">dons</a>
+      <a href="contacts.html">contacts</a>
+    </div>
+  </div>
+  <script src="assets/js/scripts.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-background: #ffffff;
+            --hover-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .testimonial-content {
+            padding: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-date {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .submit-testimonial {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-testimonial h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+
+        @media screen and (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Témoignages - Église Règne de Dieu</h1>
+        </header>
+        <main>
+            <section class="testimonials-grid" id="testimonials-container">
+                <!-- Les témoignages existants seront ajoutés ici dynamiquement -->
+            </section>
+            <section class="submit-testimonial">
+                <h2>Partagez votre témoignage</h2>
+                <form id="testimonial-form">
+                    <div class="form-group">
+                        <label for="name">Votre nom :</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial">Votre témoignage :</label>
+                        <textarea id="testimonial" name="testimonial" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Votre photo (optionnel) :</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn-submit">Soumettre le témoignage</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Données de témoignages existants (simulées)
+        const existingTestimonials = [
+            { name: "douglas", text: "L'Église Règne de Dieu a changé ma vie. J'ai trouvé une communauté aimante et un renouveau spirituel.", date: "15 mai 2023", image: "https://via.placeholder.com/300x200.png?text=Marie+Dupont" },
+            { name: "henry banza", text: "Les enseignements du Pasteur m'ont aidé à surmonter des moments difficiles. Je suis reconnaissant pour cette église.", date: "2 juin 2023", image: "https://via.placeholder.com/300x200.png?text=Jean+Martin" },
+            { name: "carlos", text: "J'ai découvert ma vocation grâce aux ministères de l'église. C'est vraiment un lieu de croissance spirituelle.", date: "20 juin 2023", image: "https://via.placeholder.com/300x200.png?text=Sophie+Lefebvre" }
+        ];
+
+        // Fonction pour créer une carte de témoignage
+        function createTestimonialCard(testimonial) {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+            card.innerHTML = `
+                <img src="${testimonial.image}" alt="${testimonial.name}" class="testimonial-image">
+                <div class="testimonial-content">
+                    <h3 class="testimonial-author">${testimonial.name}</h3>
+                    <p class="testimonial-text">${testimonial.text}</p>
+                    <p class="testimonial-date">${testimonial.date}</p>
+                </div>
+            `;
+            return card;
+        }
+
+        // Fonction pour afficher les témoignages
+        function displayTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            existingTestimonials.forEach(testimonial => {
+                container.appendChild(createTestimonialCard(testimonial));
+            });
+        }
+
+        // Afficher les témoignages existants au chargement de la page
+        displayTestimonials();
+
+        // Gérer la soumission du formulaire
+        document.getElementById('testimonial-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const text = document.getElementById('testimonial').value;
+            const photoInput = document.getElementById('photo');
+            const date = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            let image = "https://via.placeholder.com/300x200.png?text=" + encodeURIComponent(name);
+
+            if (photoInput.files && photoInput.files[0]) {
+                image = URL.createObjectURL(photoInput.files[0]);
+            }
+
+            const newTestimonial = { name, text, date, image };
+            existingTestimonials.unshift(newTestimonial);
+
+            const container = document.getElementById('testimonials-container');
+            container.insertBefore(createTestimonialCard(newTestimonial), container.firstChild);
+
+            // Réinitialiser le formulaire
+            this.reset();
+
+            // Animation pour le nouveau témoignage
+            const newCard = container.firstChild;
+            newCard.style.opacity = '0';
+            newCard.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                newCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                newCard.style.opacity = '1';
+                newCard.style.transform = 'translateY(0)';
+            }, 10);
+        });
+
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.testimonial-card').forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+     <script src="assets/js/script.js"></script>
+</body>
+</html>
