@@ -33,3 +33,13 @@
 .online-link:hover{text-decoration:underline}
 .online-privacy-note{margin:1.2rem 0 0;color:var(--ink-soft);font-size:.85rem}
 @media(max-width:900px){.next-service-card{grid-template-columns:minmax(0,1fr)}.online-grid{grid-template-columns:minmax(0,1fr)}.online-card{min-width:0}}
+
+/* Affiches d’événements : préserver le visuel carré et permettre la lecture en grand */
+.event-poster{margin:0;border-bottom:1px solid var(--line);background:var(--surface)}
+.event-poster-image{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;background:var(--surface)}
+.event-poster figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.25rem .75rem;padding:.45rem 1rem;background:var(--white)}
+.event-poster figcaption a{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;color:var(--gold-dark);font-size:.88rem;font-weight:750;text-decoration:none}
+.event-poster figcaption a:hover{text-decoration:underline}
+
+.event-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:720px){.event-grid{grid-template-columns:1fr}}
