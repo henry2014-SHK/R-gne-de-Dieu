@@ -2,6 +2,60 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const countdown = document.querySelector('[data-next-service]');
+  if (countdown) {
+    const timezone = 'Africa/Lubumbashi';
+    const offsetMs = 2 * 60 * 60 * 1000;
+    const weekMs = 7 * 24 * 60 * 60 * 1000;
+    const services = [
+      { day: 2, hour: 17, minute: 0, name: 'Enseignement & prière' },
+      { day: 4, hour: 17, minute: 0, name: 'Prière, délivrance, guérison & restauration' },
+    ];
+    const fields = {
+      days: countdown.querySelector('#countdown-days'),
+      hours: countdown.querySelector('#countdown-hours'),
+      minutes: countdown.querySelector('#countdown-minutes'),
+      seconds: countdown.querySelector('#countdown-seconds'),
+      name: countdown.querySelector('#next-service-name'),
+      date: countdown.querySelector('#next-service-date'),
+    };
+    const dateFormat = new Intl.DateTimeFormat('fr-FR', {
+      weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: timezone,
+    });
+    const nextService = (now) => {
+      const kolweziNow = new Date(now + offsetMs);
+      const candidates = services.map((service) => {
+        const daysAhead = (service.day - kolweziNow.getUTCDay() + 7) % 7;
+        const localDateAsUtc = Date.UTC(
+          kolweziNow.getUTCFullYear(), kolweziNow.getUTCMonth(), kolweziNow.getUTCDate() + daysAhead,
+          service.hour, service.minute, 0,
+        );
+        let startsAt = localDateAsUtc - offsetMs;
+        if (startsAt <= now) startsAt += weekMs;
+        return { ...service, startsAt };
+      });
+      return candidates.reduce((soonest, item) => item.startsAt < soonest.startsAt ? item : soonest);
+    };
+    const updateCountdown = () => {
+      const now = Date.now();
+      const next = nextService(now);
+      const totalSeconds = Math.max(0, Math.floor((next.startsAt - now) / 1000));
+      const values = {
+        days: Math.floor(totalSeconds / 86400),
+        hours: Math.floor((totalSeconds % 86400) / 3600),
+        minutes: Math.floor((totalSeconds % 3600) / 60),
+        seconds: totalSeconds % 60,
+      };
+      for (const [unit, value] of Object.entries(values)) {
+        if (fields[unit]) fields[unit].textContent = String(value).padStart(2, '0');
+      }
+      if (fields.name) fields.name.textContent = next.name;
+      if (fields.date) fields.date.textContent = `${dateFormat.format(new Date(next.startsAt))} · heure de Kolwezi`;
+    };
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+  }
+
   const button = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#primary-navigation');
   if (!button || !nav) return;
