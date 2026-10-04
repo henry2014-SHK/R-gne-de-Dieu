@@ -1,250 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Neutre - Église</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Style global */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #f7f7f7;
-      color: #333;
-    }
-
-    /* Niveau 1 : Menu */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 80px; /* Augmentation de la hauteur */
-      background-color: #ffffff;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    }
-
-    nav:hover {
-      background-color: #f0f0f0;
-    }
-
-    .logo {
-      width: 140px;
-      height: 90px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    .nav-links li a {
-      color: #555;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      position: relative;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: #000;
-      background-color: #ffcc00;
-      transform: translateY(-3px);
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links li a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
-      background-color: #555;
-      transition: width 0.3s;
-    }
-
-    .nav-links li a:hover::after {
-      width: 100%;
-    }
-
-    /* Menu toggle */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle .bar {
-      background-color: #333;
-      height: 4px;
-      width: 30px;
-      margin: 2px 0;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .menu-toggle.open .bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .menu-toggle.open .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.open .bar:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -6px);
-    }
-
-    /* Mobile menu */
-    #mobile-menu {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 40;
-      display: none;
-      animation: fadeIn 0.3s ease-in-out;
-      overflow-y: auto; /* Pour rendre le menu défilant */
-    }
-
-    #mobile-menu.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-    }
-
-    #mobile-menu .menu-content {
-      background-color: #ffffff;
-      width: 90%;
-      max-width: 320px;
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      animation: slideIn 0.3s ease-in-out;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    #mobile-menu .menu-content .logo {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    #mobile-menu .menu-content h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    #mobile-menu .menu-content a {
-      display: block;
-      margin: 15px 0;
-      font-size: 18px;
-      text-decoration: none;
-      color: #555;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    #mobile-menu .menu-content a:hover {
-      color: #000;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  </style>
+  <meta http-equiv="refresh" content="2; url=index.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf9f4">
+  <meta name="description" content="Cette page a été déplacée vers la section correspondante du site.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; form-action 'self'; upgrade-insecure-requests">
+  <link rel="canonical" href="https://henry2014-shk.github.io/R-gne-de-Dieu/MENU.HTML">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>Accueil | Église Règne de Dieu</title>
 </head>
 <body>
-  <!-- Niveau 1 : Menu principal -->
-  <nav>
-    <img src="Logo.png" alt="Logo de l'Église" class="logo">
-    <div class="menu-toggle" id="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#cultes" onclick="window.location.href='nos cultes.html'">Nos cultes</a></li>
-      <li><a href="#apropos" onclick="window.location.href='propos.html'">À propos</a></li>
-      <li><a href="#contact" onclick="window.location.href='dons.html'">Faire un don</a></li>
-      <li><a href="#faireunDon" onclick="window.location.href='contacts.html'">Rejoignez-nous</a></li>
-    </ul>
-  </nav>
-
-  <!-- Niveau 2 : Menu burger pour mobile -->
-  <div id="mobile-menu">
-    <div class="menu-content">
-      <img src="Logo.png" alt="Logo de l'Église" class="logo">
-      <h2>Règne de Dieu</h2>
-      <a href="#accueil" onclick="toggleMenu()">Accueil</a>
-      <a href="#cultes" onclick="toggleMenu()">Nos cultes</a>
-      <a href="#temoignages" onclick="toggleMenu()">Témoignages</a>
-      <a href="#evenements" onclick="toggleMenu()">Événements</a>
-      <a href="#contact" onclick="toggleMenu()">Contact</a>
-    </div>
+<p class="skip-link">Redirection en cours. <a href="index.html">Continuer vers la page</a>.</p>
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html" aria-label="Église Règne de Dieu — accueil">
+    <img src="assets/images/logo.png" width="1640" height="856" alt="">
+    <span class="brand-name">Règne de Dieu<small>Église · Kolwezi</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <nav class="navigation" id="primary-navigation" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="propos.html">L’église</a><a href="nos cultes.html">Cultes</a><a href="events.html">Événements</a><a href="contacts.html">Contact</a><a class="nav-donate" href="dons.html">Soutenir l’église</a></nav>
+</div></header>
+<main id="main"><section class="section"><div class="container prose"><p class="kicker">Page déplacée</p><h1>Accueil</h1><p>Cette page a été intégrée à la nouvelle présentation de l’église.</p><p><a class="button button--dark" href="index.html">Continuer</a></p></div></section></main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><a class="brand" href="index.html"><img src="assets/images/logo.png" width="1640" height="856" alt=""><span class="brand-name">Règne de Dieu<small>Une communauté de foi à Kolwezi</small></span></a><p>Grandir dans la foi, vivre la fraternité et servir notre communauté.</p></div>
+    <div><h2>Découvrir</h2><nav class="footer-links" aria-label="Liens de découverte"><a href="propos.html">Notre église</a><a href="pasteur.html">Le pasteur</a><a href="formation.html">Formation</a><a href="temoignages.html">Témoignages</a></nav></div>
+    <div><h2>Nous rejoindre</h2><p>Kolwezi, avenue Yamisano, en diagonale de l’école Zénith. Repère : derrière le gouvernorat.</p><p><a href="tel:+243993228451">+243 993 228 451</a></p><a href="contacts.html">Voir les informations de contact →</a></div>
   </div>
-
-  <!-- JavaScript -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMenu() {
-      mobileMenu.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-    }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('open');
-      }
-    });
-
-    menuToggle.addEventListener('click', toggleMenu);
-  </script>
+  <div class="footer-bottom"><span>© <span id="year">2026</span> Église Règne de Dieu</span><span>Site statique · Aucune donnée bancaire collectée ici</span></div>
+</div></footer>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
