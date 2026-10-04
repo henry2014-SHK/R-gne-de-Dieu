@@ -10,3 +10,19 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 .mt-8{margin-top:1rem}.mt-12{margin-top:1.5rem}.mt-16{margin-top:2rem}.text-muted{color:var(--ink-soft)}.narrow-copy{max-width:760px}
+
+/* Zooms discrets : la couverture revient à sa taille normale et les photos réagissent au survol. */
+@media(prefers-reduced-motion:no-preference){
+.page-hero::before{animation:hero-zoom-out 1.2s cubic-bezier(.2,.7,.2,1) both}
+.card-image,.split-image{transition:transform .42s cubic-bezier(.2,.7,.2,1)}
+@keyframes hero-zoom-out{from{transform:scale(1.055)}to{transform:scale(1)}}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.card:hover .card-image{transform:scale(1.045)}
+.split-image:hover{transform:scale(1.025)}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+}
+@media(hover:none) and (prefers-reduced-motion:no-preference){
+.gallery-grid figure:hover img{transform:none}
+.card:active .card-image,.gallery-grid figure:active img,.split-image:active{transform:scale(1.02)}
+}
