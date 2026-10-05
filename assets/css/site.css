@@ -47,7 +47,7 @@
 
 /* Diaporama d’accueil — fondu lent et zoom respirant. */
 .page-hero--home{position:relative;isolation:isolate;min-height:570px;padding:clamp(4.25rem,8vw,7.5rem) 0}
-.page-hero--home::before{z-index:1;background:linear-gradient(90deg,rgba(12,22,40,.92) 0%,rgba(12,22,40,.74) 48%,rgba(12,22,40,.28) 100%);pointer-events:none}
+.page-hero--home::before{z-index:1;background:linear-gradient(90deg,rgba(12,22,40,.56) 0%,rgba(12,22,40,.30) 48%,rgba(12,22,40,.10) 100%);pointer-events:none}
 .page-hero--home .container{z-index:2}
 .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#101828;color:var(--white)}
 .hero-slide{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);transition:opacity 1.8s ease-in-out;will-change:opacity,transform}
@@ -73,3 +73,16 @@
   .page-hero--home .container{width:min(calc(100% - 2rem),var(--content));padding:2.25rem 0 3rem}
 }
 @media(max-width:380px){.page-hero--home .hero-slideshow-controls{gap:.25rem;right:.45rem;bottom:.45rem}.page-hero--home .hero-slide-toggle{min-width:64px;padding-inline:.5rem}}
+
+
+/* Photos officielles récentes et provenance des visuels. */
+.page-hero:not(.page-hero--home)::before{background-image:linear-gradient(90deg,rgba(12,22,40,.94) 0%,rgba(12,22,40,.78) 48%,rgba(12,22,40,.30) 100%),url("../images/facebook-culte-2026-09-20.jpg")}
+.gallery-grid figure.gallery-contain img{object-fit:contain;background:var(--surface)}
+.gallery-grid figure.gallery-portrait img{aspect-ratio:3/4;object-fit:contain;background:var(--surface)}
+.gallery-grid figcaption a,.profile-photo figcaption a{color:var(--gold-dark);font-weight:700;text-decoration:none}
+.gallery-grid figcaption a:hover,.profile-photo figcaption a:hover{text-decoration:underline}
+.profile-photo{margin:0}
+.profile-photo figcaption{margin-top:.5rem;color:var(--ink-soft);font-size:.85rem}
+
+/* Galerie : boîtes de hauteur stable, photos entières sans recadrage. */
+.gallery-grid img{height:clamp(240px,26vw,300px);aspect-ratio:auto;object-fit:contain;background:var(--surface)}
