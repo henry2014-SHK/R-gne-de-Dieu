@@ -46,9 +46,12 @@
 
 
 /* Diaporama d’accueil — fondu lent et zoom respirant. */
-.page-hero--home{position:relative;isolation:isolate;min-height:570px;padding:clamp(4.25rem,8vw,7.5rem) 0}
+.page-hero--home{position:relative;isolation:isolate;display:flex;align-items:center;min-height:570px;padding:clamp(4.25rem,8vw,7.5rem) 0;text-align:center}
 .page-hero--home::before{z-index:1;background:linear-gradient(90deg,rgba(12,22,40,.56) 0%,rgba(12,22,40,.30) 48%,rgba(12,22,40,.10) 100%);pointer-events:none}
-.page-hero--home .container{z-index:2}
+.page-hero--home .container{z-index:2;text-align:center}
+.page-hero--home h1{max-width:none;font-size:clamp(3rem,7.5vw,6.2rem);text-wrap:balance}
+.page-hero--home p.home-tagline{max-width:34ch;margin:1rem auto 0;color:rgba(255,255,255,.94);font-size:clamp(1rem,1.7vw,1.2rem);font-weight:550;line-height:1.55;text-wrap:balance}
+.page-hero--home .hero-actions{justify-content:center;margin-top:1.65rem}
 .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#101828;color:var(--white)}
 .hero-slide{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);transition:opacity 1.8s ease-in-out;will-change:opacity,transform}
 .hero-slide.is-active{opacity:1;animation:hero-image-breathe 14s ease-in-out infinite}
