@@ -11,6 +11,9 @@
 
 .mt-8{margin-top:1rem}.mt-12{margin-top:1.5rem}.mt-16{margin-top:2rem}.text-muted{color:var(--ink-soft)}.narrow-copy{max-width:760px}
 
+/* Sur petit écran, les images de contenu conservent leur ratio et restent dans leur conteneur. */
+@media(max-width:720px){img{max-width:100%;height:auto}}
+
 
 /* Lecteurs de culte et compte à rebours */
 .next-service-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);align-items:center;gap:2rem;margin-top:2rem;padding:clamp(1.4rem,4vw,2.3rem);border-radius:var(--radius);background:var(--ink);color:var(--white);box-shadow:var(--shadow)}
