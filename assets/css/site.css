@@ -11,6 +11,9 @@
 
 .mt-8{margin-top:1rem}.mt-12{margin-top:1.5rem}.mt-16{margin-top:2rem}.text-muted{color:var(--ink-soft)}.narrow-copy{max-width:760px}
 
+/* Sur petit écran, les images de contenu conservent leur ratio et restent dans leur conteneur. */
+@media(max-width:720px){img{max-width:100%;height:auto}}
+
 
 /* Lecteurs de culte et compte à rebours */
 .next-service-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);align-items:center;gap:2rem;margin-top:2rem;padding:clamp(1.4rem,4vw,2.3rem);border-radius:var(--radius);background:var(--ink);color:var(--white);box-shadow:var(--shadow)}
@@ -46,9 +49,12 @@
 
 
 /* Diaporama d’accueil — fondu lent et zoom respirant. */
-.page-hero--home{position:relative;isolation:isolate;min-height:570px;padding:clamp(4.25rem,8vw,7.5rem) 0}
+.page-hero--home{position:relative;isolation:isolate;display:flex;align-items:center;min-height:570px;padding:clamp(4.25rem,8vw,7.5rem) 0;text-align:center}
 .page-hero--home::before{z-index:1;background:linear-gradient(90deg,rgba(12,22,40,.56) 0%,rgba(12,22,40,.30) 48%,rgba(12,22,40,.10) 100%);pointer-events:none}
-.page-hero--home .container{z-index:2}
+.page-hero--home .container{z-index:2;text-align:center}
+.page-hero--home h1{max-width:none;font-size:clamp(3rem,7.5vw,6.2rem);text-wrap:balance;text-shadow:0 0 10px rgba(255,236,183,.36),0 0 24px rgba(211,154,34,.18),0 3px 14px rgba(0,0,0,.4)}
+.page-hero--home p.home-tagline{max-width:34ch;margin:1rem auto 0;color:rgba(255,255,255,.94);font-size:clamp(1rem,1.7vw,1.2rem);font-weight:550;line-height:1.55;text-wrap:balance}
+.page-hero--home .hero-actions{justify-content:center;margin-top:1.65rem}
 .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#101828;color:var(--white)}
 .hero-slide{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);transition:opacity 1.8s ease-in-out;will-change:opacity,transform}
 .hero-slide.is-active{opacity:1;animation:hero-image-breathe 14s ease-in-out infinite}
@@ -63,14 +69,13 @@
 .hero-slide-count{min-width:3.1rem;color:#fff;font-size:.84rem;font-variant-numeric:tabular-nums;text-align:center;text-shadow:0 1px 5px rgba(0,0,0,.75)}
 .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 @media(max-width:720px){
-  .page-hero--home{display:flex;min-height:0;flex-direction:column;padding:0}
-  .page-hero--home::before{display:none}
-  .page-hero--home .hero-slideshow{position:relative;inset:auto;width:100%;aspect-ratio:16/9;flex:0 0 auto;background:#101828}
-  .page-hero--home .hero-slide{object-fit:contain}
+  .page-hero--home{display:flex;min-height:clamp(27rem,78vh,40rem);flex-direction:row;padding:3rem 0 5.25rem}
+  .page-hero--home::before{display:block;background:linear-gradient(180deg,rgba(12,22,40,.22) 0%,rgba(12,22,40,.46) 48%,rgba(12,22,40,.68) 100%)}
+  .page-hero--home h1{font-size:clamp(2.35rem,11vw,3.35rem)}
   .page-hero--home .hero-slideshow-controls{right:.7rem;bottom:.7rem}
   .page-hero--home .hero-slide-control{min-width:42px;min-height:42px;padding:.4rem .62rem}
   .page-hero--home .hero-slide-toggle{min-width:72px}
-  .page-hero--home .container{width:min(calc(100% - 2rem),var(--content));padding:2.25rem 0 3rem}
+  .page-hero--home .container{width:min(calc(100% - 2rem),var(--content));padding:0}
 }
 @media(max-width:380px){.page-hero--home .hero-slideshow-controls{gap:.25rem;right:.45rem;bottom:.45rem}.page-hero--home .hero-slide-toggle{min-width:64px;padding-inline:.5rem}}
 
@@ -83,3 +88,8 @@
 
 /* Preserve the full source frame of the homepage landscape photo. */
 .split-image--landscape{height:auto;max-height:none;object-fit:contain}
+
+
+/* Fond des pages intérieures, distinct du diaporama d’accueil. */
+.page-hero:not(.page-hero--home)::before{background:linear-gradient(90deg,rgba(12,22,40,.90) 0%,rgba(12,22,40,.76) 52%,rgba(12,22,40,.52) 100%),url("../images/fond-interieur-anniversaire-2026.jpg") center 42%/cover}
+@media(max-width:720px){.page-hero:not(.page-hero--home)::before{background:linear-gradient(180deg,rgba(12,22,40,.58) 0%,rgba(12,22,40,.70) 52%,rgba(12,22,40,.80) 100%),url("../images/fond-interieur-anniversaire-2026.jpg") center 42%/cover}}
