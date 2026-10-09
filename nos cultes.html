@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbf9f4">
+  <meta name="theme-color" content="#080f1b">
   <meta name="description" content="Horaires des cultes à Kolwezi, célébration dominicale, directs et rediffusions de l’Église Règne de Dieu.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
   <link rel="canonical" href="https://henry2014-shk.github.io/R-gne-de-Dieu/nos%20cultes.html">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/immersive.css">
   <title>Nos cultes | Église Règne de Dieu</title>
 </head>
 <body>
@@ -22,11 +23,11 @@
   <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
   <nav class="navigation" id="primary-navigation" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="propos.html">L’église</a><a href="nos cultes.html" aria-current="page">Cultes</a><a href="events.html">Événements</a><a href="contacts.html">Contact</a><a class="nav-donate" href="dons.html">Soutenir l’église</a></nav>
 </div></header>
-<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow">Nos rencontres</p><h1>Des temps de prière, d’enseignement et de partage</h1><p>Retrouvons-nous pour grandir ensemble dans la foi et vivre la fraternité.</p></div></section><section class="section section--white"><div class="container"><div class="section-heading"><p class="kicker">Cette semaine</p><h2>Les cultes de l’église</h2><p>Les horaires peuvent évoluer. Pour éviter tout déplacement inutile, contactez-nous avant votre venue.</p></div>
-<div class="schedule-card"><div class="schedule-day">Dimanche</div><div><h3>Culte dominical</h3><p>Un temps de louange, de prière et d’enseignement biblique.</p></div><div class="schedule-time">9 h – 12 h 30</div></div>
-<div class="schedule-card"><div class="schedule-day">Mardi</div><div><h3>Enseignement &amp; prière</h3><p>Un temps pour approfondir la Parole et prier ensemble.</p></div><div class="schedule-time">17 h – 19 h 20</div></div>
-<div class="schedule-card"><div class="schedule-day">Jeudi</div><div><h3>Prière, délivrance, guérison &amp; restauration</h3><p>Un rassemblement consacré à la prière et à la restauration spirituelle.</p></div><div class="schedule-time">17 h – 19 h 20</div></div>
+<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow">Nos rencontres</p><h1>Des temps de prière, d’enseignement et de partage</h1><p>Retrouvons-nous pour grandir ensemble dans la foi et vivre la fraternité.</p><div class="hero-actions cultes-hero-actions"><a class="button" href="#direct">Regarder le direct</a><a class="button button--light" href="#horaires">Les horaires</a></div></div>
 
+  </section>
+<section class="section section--white next-service-section" id="prochain-culte" aria-labelledby="next-service-name">
+  <div class="container">
 <div class="next-service-card" data-next-service>
   <div class="next-service-copy">
     <p class="kicker">Prochain rendez-vous · Kolwezi</p>
@@ -41,60 +42,103 @@
   </div>
 </div>
 <p class="countdown-footnote">Décompte calculé selon les horaires publiés du dimanche à 9 h et du mardi et jeudi à 17 h (heure de Kolwezi, UTC+2).</p>
+  </div>
+</section>
+<section class="live-cinema" id="direct" aria-labelledby="live-heading">
+  <div class="live-cinema-inner">
+    <div class="live-cinema-heading">
+      <div>
+        <p class="kicker">Le culte en ligne</p>
+        <h2 id="live-heading">Vivre le culte, où que vous soyez.</h2>
+      </div>
+      <button class="live-fullscreen" type="button" data-live-fullscreen aria-controls="live-player" hidden><span aria-hidden="true">⛶</span> Plein écran</button>
+    </div>
+    <div class="youtube-frame live-player is-waiting" id="live-player">
+      <iframe id="rdd-live-video" data-live-src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCo1XCDNhFb-DUzr1VYmo8yw" title="Culte en direct — chaîne Prophète Valery Koj TV" width="1600" height="900" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" aria-hidden="true" tabindex="-1" allowfullscreen></iframe>
+      <div class="live-waiting" data-live-waiting>
+        <div class="live-waiting-brand">
+          <div class="live-waiting-emblem"><img src="assets/images/rdd-tv-symbole.png" width="650" height="578" alt="Symbole de l’Église Règne de Dieu : couronne, globe, croix et Bible." decoding="async"></div>
+          <p class="live-waiting-channel">RDD <span>TV</span></p>
+          <p class="live-waiting-message">En attente du prochain culte</p>
+          <button class="live-waiting-access" type="button" data-live-access hidden>Accéder au direct <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="live-cinema-footer">
+      <p>Retrouvez le direct pendant les diffusions de la chaîne. Si le lecteur ne s’ouvre pas automatiquement, choisissez « Accéder au direct ».</p>
+      <a href="https://www.youtube.com/@prophetevalerykoj6977/live" target="_blank" rel="noopener noreferrer">Ouvrir sur YouTube <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="live-fullscreen-feedback" data-live-feedback role="status" hidden>Le plein écran n’est pas disponible ici. Utilisez la commande du lecteur YouTube.</p>
+    <p class="live-privacy">Le lecteur est fourni par YouTube. La connexion à YouTube s’établit lorsque cet espace apparaît à l’écran.</p>
+  </div>
+</section>
+<section class="section section--soft replay-section" aria-labelledby="replays-heading">
+  <div class="container replay-layout">
+    <div class="replay-copy">
+      <p class="kicker">Les messages de l’église</p>
+      <h2 id="replays-heading">Revoir les cultes précédents</h2>
+      <p>Retrouvez les prédications et les célébrations sur la chaîne Prophète Valéry Koj TV.</p>
+      <a class="online-link" href="https://youtu.be/O9jq4jyrtUs" target="_blank" rel="noopener noreferrer">Voir cette vidéo sur YouTube <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="youtube-frame replay-player">
+      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUo1XCDNhFb-DUzr1VYmo8yw" title="Rediffusions et vidéos de Prophète Valery Koj TV" width="960" height="540" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+<section class="section section--white" id="horaires"><div class="container"><div class="section-heading"><p class="kicker">Cette semaine</p><h2>Les cultes de l’église</h2><p>Les horaires peuvent évoluer. Pour éviter tout déplacement inutile, contactez-nous avant votre venue.</p></div>
+<div class="schedule-card service-scene service-scene--dimanche" id="culte-dimanche"><img alt="" aria-hidden="true" class="service-scene-image" decoding="async" height="1490" loading="lazy" src="assets/images/fond-culte-dimanche.webp" width="1669"/><div class="service-scene-header"><div class="schedule-day">Dimanche</div><div class="schedule-time">9 h – 12 h 30</div></div><div class="service-scene-copy"><h3>Le culte dominical</h3><p class="program-tagline">Un rendez-vous de célébration, d’adoration et de bonne nouvelle.</p><p>Le culte dominical est le grand rassemblement hebdomadaire de la famille de Dieu. C’est un moment de louange, d’adoration, de communion fraternelle et de proclamation de l’Évangile de Jésus-Christ.</p><p>À travers la prédication de la Parole, les chants et la prière, chaque participant est invité à rencontrer Dieu, à renouveler son espérance et à recevoir les enseignements nécessaires pour vivre une vie qui l’honore.</p></div></div>
+<div class="schedule-card service-scene service-scene--mardi" id="culte-mardi"><img alt="" aria-hidden="true" class="service-scene-image" decoding="async" height="375" loading="lazy" src="assets/images/fond-culte-mardi.webp" width="650"/><div class="service-scene-header"><div class="schedule-day">Mardi</div><div class="schedule-time">17 h – 19 h 20</div></div><div class="service-scene-copy"><h3>Le culte d’enseignement</h3><p class="program-tagline">Un rendez-vous pour grandir dans la connaissance de la Parole de Dieu.</p><p>Le culte d’enseignement est un moment consacré à l’étude approfondie des Écritures afin d’aider chaque croyant à mieux connaître Dieu, à comprendre sa volonté et à mettre en pratique ses principes dans sa vie quotidienne. Il vise à affermir la foi, à renouveler l’intelligence et à former des disciples mûrs, capables de vivre selon la Parole de Dieu.</p></div></div>
+<div class="schedule-card service-scene service-scene--jeudi" id="culte-jeudi"><img alt="" aria-hidden="true" class="service-scene-image" decoding="async" height="235" loading="lazy" src="assets/images/fond-culte-jeudi.webp" width="990"/><div class="service-scene-header"><div class="schedule-day">Jeudi</div><div class="schedule-time">17 h – 19 h 20</div></div><div class="service-scene-copy"><h3>Jeudi Mungu Anaweza</h3><p class="program-tagline">Un rendez-vous avec le Dieu de l’impossible.</p><p>Jeudi Mungu Anaweza est un programme consacré à la prière, à la délivrance, à la guérison et aux services prophétiques. C’est un temps de recherche intense de la présence de Dieu, au cours duquel les fidèles sont encouragés à présenter leurs besoins au Seigneur, à rechercher sa direction et à s’attendre à son intervention dans leur vie.</p><p>Ce programme met l’accent sur la puissance de la prière, la liberté en Jésus-Christ, la restauration et la foi en un Dieu capable d’agir au-delà des limites humaines.</p></div></div>
+
+
 <p class="mt-12"><a class="button button--dark" href="contacts.html">Nous trouver à Kolwezi</a></p></div></section>
-<section class="section" aria-labelledby="sunday-gallery-heading">
+<section class="section" id="foi-partagee" aria-labelledby="sunday-gallery-heading">
   <div class="container">
     <div class="section-heading">
       <p class="kicker">Le rendez-vous du dimanche</p>
       <h2 id="sunday-gallery-heading">Un temps de foi partagé</h2>
       <p>Louange, prière et enseignement biblique rythment la célébration dominicale.</p>
     </div>
-    <div class="gallery-grid" role="group" aria-labelledby="sunday-gallery-heading">
-      <figure><img src="assets/images/culte-dimanche-01.webp" width="1070" height="714" loading="lazy" decoding="async" alt="Le prédicateur et l’équipe de louange réunis sur la scène pendant le culte dominical."><figcaption>Louange et prédication au cœur de la célébration.</figcaption></figure>
-      <figure><img src="assets/images/culte-dimanche-02.webp" width="934" height="1400" loading="lazy" decoding="async" alt="Le prédicateur partage un message à la chaire."><figcaption>Un temps consacré à l’enseignement de la Parole.</figcaption></figure>
-      <figure><img src="assets/images/culte-dimanche-03.webp" width="1079" height="720" loading="lazy" decoding="async" alt="Le prédicateur lève la main pendant un temps de prière au culte dominical."><figcaption>La prière et la foi vécues en communauté.</figcaption></figure>
+    <div class="gallery-grid faith-gallery" role="group" aria-labelledby="sunday-gallery-heading">
+      <figure class="faith-slideshow" data-faith-slideshow aria-labelledby="faith-louange-caption">
+        <div class="faith-slide-track">
+          <img class="faith-slide is-active" src="assets/images/foi-louange-01.webp" srcset="assets/images/foi-louange-01-540.webp 540w, assets/images/foi-louange-01.webp 1079w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1079" height="720" loading="lazy" decoding="async" alt="L’équipe de louange chante et prie devant le nom Règne de Dieu.">
+          <img class="faith-slide" src="assets/images/foi-louange-02.webp" srcset="assets/images/foi-louange-02-540.webp 540w, assets/images/foi-louange-02.webp 1079w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1079" height="720" loading="lazy" decoding="async" alt="Les choristes participent à un temps de louange, mains levées." aria-hidden="true">
+          <img class="faith-slide" src="assets/images/foi-louange-03.webp" srcset="assets/images/foi-louange-03-540.webp 540w, assets/images/foi-louange-03.webp 1080w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1080" height="655" loading="lazy" decoding="async" alt="Un instrument à percussion accompagne la louange de la communauté." aria-hidden="true">
+        </div>
+        <figcaption id="faith-louange-caption">Louange et prédication au cœur de la célébration.</figcaption>
+      </figure>
+      <figure class="faith-slideshow" data-faith-slideshow aria-labelledby="faith-parole-caption">
+        <div class="faith-slide-track">
+          <img class="faith-slide is-active" src="assets/images/foi-parole-01.webp" srcset="assets/images/foi-parole-01-540.webp 540w, assets/images/foi-parole-01.webp 1079w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1079" height="720" loading="lazy" decoding="async" alt="Des fidèles écoutent le message biblique et prennent des notes.">
+          <img class="faith-slide" src="assets/images/foi-parole-02.webp" srcset="assets/images/foi-parole-02-540.webp 540w, assets/images/foi-parole-02.webp 1080w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1080" height="680" loading="lazy" decoding="async" alt="Des membres de l’assemblée consignent l’enseignement dans leurs carnets." aria-hidden="true">
+          <img class="faith-slide" src="assets/images/foi-parole-03.webp" srcset="assets/images/foi-parole-03-540.webp 540w, assets/images/foi-parole-03.webp 1076w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1076" height="665" loading="lazy" decoding="async" alt="Une fidèle écrit dans son carnet pendant l’enseignement de la Parole." aria-hidden="true">
+        </div>
+        <figcaption id="faith-parole-caption">Un temps consacré à l’enseignement de la Parole.</figcaption>
+      </figure>
+      <figure class="faith-slideshow" data-faith-slideshow aria-labelledby="faith-priere-caption">
+        <div class="faith-slide-track">
+          <img class="faith-slide is-active" src="assets/images/foi-priere-01.webp" srcset="assets/images/foi-priere-01-540.webp 540w, assets/images/foi-priere-01.webp 1080w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1080" height="664" loading="lazy" decoding="async" alt="Deux fidèles prient dans l’assemblée, les yeux fermés.">
+          <img class="faith-slide" src="assets/images/foi-priere-02.webp" srcset="assets/images/foi-priere-02-540.webp 540w, assets/images/foi-priere-02.webp 1080w" sizes="(max-width: 720px) calc(100vw - 2rem), (max-width: 1024px) 45vw, 360px" width="1080" height="778" loading="lazy" decoding="async" alt="Un fidèle s’incline et lève la main pendant la prière." aria-hidden="true">
+        </div>
+        <figcaption id="faith-priere-caption">La prière et la foi vécues en communauté.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
-<section class="section section--soft online-section" aria-labelledby="online-heading">
-  <div class="container">
-    <div class="section-heading">
-      <p class="kicker">En direct &amp; rediffusions</p>
-      <h2 id="online-heading">Suivre le culte en ligne</h2>
-      <p>Suivez le culte en direct et retrouvez les rediffusions sur la chaîne YouTube Prophète Valery Koj TV.</p>
-    </div>
-    <div class="online-grid">
-      <article class="online-card" aria-labelledby="live-heading">
-        <p class="kicker">Direct de la chaîne</p>
-        <h3 id="live-heading">Regarder le culte en direct</h3>
-        <div class="youtube-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCo1XCDNhFb-DUzr1VYmo8yw" title="Culte en direct — chaîne Prophète Valery Koj TV" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="online-note">En dehors des périodes de diffusion, le lecteur peut afficher une vidéo indisponible. Si le direct ne s’affiche pas à son démarrage, actualisez la page.</p>
-        <a class="online-link" href="https://www.youtube.com/@prophetevalerykoj6977/live" target="_blank" rel="noopener noreferrer">Ouvrir le direct sur YouTube</a>
-      </article>
-      <article class="online-card" aria-labelledby="replays-heading">
-        <p class="kicker">Archives de la chaîne</p>
-        <h3 id="replays-heading">Revoir les cultes précédents</h3>
-        <div class="youtube-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUo1XCDNhFb-DUzr1VYmo8yw" title="Rediffusions et vidéos de Prophète Valery Koj TV" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="online-note">Retrouvez les cultes précédents dans la playlist de la chaîne Prophète Valery Koj TV.</p>
-        <a class="online-link" href="https://youtu.be/O9jq4jyrtUs" target="_blank" rel="noopener noreferrer">Voir cette vidéo sur YouTube</a>
-      </article>
-    </div>
-    <p class="online-privacy-note">Les lecteurs vidéo sont fournis par YouTube. La connexion à YouTube s’établit lorsque les vidéos apparaissent à l’écran.</p>
-  </div>
-</section>
+
 </main>
 <footer class="site-footer"><div class="container">
   <div class="footer-grid">
     <div><a class="brand" href="index.html"><img src="assets/images/logo.png" width="1640" height="856" alt=""><span class="brand-name">Règne de Dieu<small>Une communauté de foi à Kolwezi</small></span></a><p>Grandir dans la foi, vivre la fraternité et servir notre communauté.</p></div>
     <div><h2>Découvrir</h2><nav class="footer-links" aria-label="Liens de découverte"><a href="propos.html">Notre église</a><a href="pasteur.html">Le pasteur</a><a href="formation.html">Formation</a><a href="temoignages.html">Témoignages</a></nav></div>
-    <div><h2>Nous rejoindre</h2><p>Kolwezi, avenue Sendwe/3Z. Repère : derrière Kin Marché Arcadia.</p><p><a href="tel:+243993228451">+243 993 228 451</a></p><a href="contacts.html">Voir les informations de contact →</a></div>
+    <div><h2>Nous rejoindre</h2><p>Kolwezi, avenue Sendwe/3Z. Repère : derrière Kin Marché Arcadia.</p><p><a href="tel:+243993228451">+243 993 228 451</a></p><p><a class="footer-email" href="mailto:regnededieuchurch@gmail.com">regnededieuchurch@gmail.com</a></p><p><a href="https://maps.app.goo.gl/auCexUBLsVgvCBBv7" target="_blank" rel="noopener noreferrer">Voir la position sur Google Maps ↗</a></p><a href="contacts.html">Voir les informations de contact →</a></div>
   </div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> Église Règne de Dieu</span><span>Ce site ne traite aucun paiement et ne collecte aucune donnée bancaire.</span></div>
 </div></footer>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/immersive.js" defer></script>
+<script src="assets/js/live.js" defer></script>
+<script src="assets/js/faith-gallery.js" defer></script>
 </body>
 </html>

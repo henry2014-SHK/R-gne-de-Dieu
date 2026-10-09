@@ -60,59 +60,24 @@
   const slideshow = document.querySelector('[data-slideshow]');
   if (slideshow) {
     const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
-    const status = slideshow.querySelector('[data-slideshow-status]');
-    const counter = slideshow.querySelector('[data-slide-current]');
-    const previous = slideshow.querySelector('[data-slideshow-prev]');
-    const next = slideshow.querySelector('[data-slideshow-next]');
-    const toggle = slideshow.querySelector('[data-slideshow-toggle]');
-    const toggleLabel = slideshow.querySelector('[data-toggle-label]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const interval = Math.max(9000, Number(slideshow.dataset.interval) || 14000);
-    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
-    let userPaused = false;
+    let index = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
     let timer = null;
-
-    const stop = () => {
-      if (timer !== null) window.clearInterval(timer);
-      timer = null;
-    };
-    const showSlide = (index, announce = false) => {
+    const showSlide = () => {
       if (!slides.length) return;
-      activeIndex = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
-      if (counter) counter.textContent = String(activeIndex + 1);
-      if (status) {
-        status.setAttribute('aria-live', announce ? 'polite' : 'off');
-        status.textContent = `Photo ${activeIndex + 1} sur ${slides.length}. ${slides[activeIndex].dataset.description || ''}`;
-        if (announce) window.setTimeout(() => status.setAttribute('aria-live', 'off'), 1500);
-      }
-    };
-    const syncControls = () => {
-      const motionReduced = reducedMotion.matches;
-      slideshow.classList.toggle('is-paused', userPaused || motionReduced || document.hidden);
-      if (toggle) {
-        toggle.disabled = motionReduced;
-        toggle.setAttribute('aria-pressed', String(userPaused));
-        toggle.setAttribute('aria-label', motionReduced
-          ? 'Défilement automatique désactivé selon votre préférence de mouvement réduit'
-          : userPaused ? 'Reprendre le diaporama' : 'Mettre en pause le diaporama');
-        if (toggleLabel) toggleLabel.textContent = motionReduced ? 'Mouvement réduit' : userPaused ? 'Reprendre' : 'Pause';
-      }
+      index = (index + 1) % slides.length;
+      slides.forEach((slide, n) => slide.classList.toggle('is-active', n === index));
     };
     const start = () => {
-      stop();
-      syncControls();
-      if (slides.length > 1 && !userPaused && !reducedMotion.matches && !document.hidden) {
-        timer = window.setInterval(() => showSlide(activeIndex + 1), interval);
+      if (timer !== null) window.clearInterval(timer);
+      timer = null;
+      slideshow.classList.toggle('is-paused', reducedMotion.matches || document.hidden);
+      if (slides.length > 1 && !reducedMotion.matches && !document.hidden) {
+        timer = window.setInterval(showSlide, interval);
       }
     };
-
-    showSlide(activeIndex);
-    syncControls();
-    previous?.addEventListener('click', () => { showSlide(activeIndex - 1, true); start(); });
-    next?.addEventListener('click', () => { showSlide(activeIndex + 1, true); start(); });
-    toggle?.addEventListener('click', () => { userPaused = !userPaused; start(); });
-    reducedMotion.addEventListener?.('change', start);
+    reducedMotion.addEventListener('change', start);
     document.addEventListener('visibilitychange', start);
     start();
   }
