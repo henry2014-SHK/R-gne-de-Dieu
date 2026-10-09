@@ -8,6 +8,7 @@
     const offsetMs = 2 * 60 * 60 * 1000;
     const weekMs = 7 * 24 * 60 * 60 * 1000;
     const services = [
+      { day: 0, hour: 9, minute: 0, name: 'Culte dominical' },
       { day: 2, hour: 17, minute: 0, name: 'Enseignement & prière' },
       { day: 4, hour: 17, minute: 0, name: 'Prière, délivrance, guérison & restauration' },
     ];
