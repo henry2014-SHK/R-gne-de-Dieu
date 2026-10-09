@@ -54,3 +54,7 @@
 - [x] Présenter la formation comme un parcours pour faire croître le chrétien dans la foi, centré sur gagner les âmes à Christ, le baptême et le discipolat.
 - [x] Intégrer les thèmes des leçons d’affermissement : vie nouvelle en Jésus-Christ, communion avec lui, méditation de la Parole, prière, croissance chrétienne, communion fraternelle, amour fraternel et mission de faire des disciples. Rédiger comme l’église, sans référence au PDF comme source, sans calendrier inventé ni reprise de ses anciennes coordonnées.
 - [x] Conserver l’identité immersive, les coordonnées actuelles et le brouillon #10; ne pas publier le document fourni ou le site principal.
+
+## Doctrine des Saintes Écritures
+
+- [x] Remplacer le bloc « Comprendre le baptême » par « La doctrine des Saintes Écritures », avec les fondements d’Hébreux 6:1-2 : renoncement aux œuvres mortes, foi en Dieu, doctrine des baptêmes, imposition des mains, résurrection des morts et jugement éternel. Harmoniser l’introduction et la description de la page; conserver l’évangélisation, le discipolat, les leçons d’affermissement et le brouillon.
