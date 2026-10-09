@@ -11,6 +11,8 @@ La retouche éditoriale précédente n’était pas assez visible. Cette passe r
 - Lecture automatique en boucle sans commandes visibles, selon la dernière demande utilisateur. Pas d’arrêt au survol ou au focus; la préférence système de mouvement réduit reste prioritaire.
 - Le titre demeure sur la photo en mobile. Les images de contenu et affiches restent entières. Rien d’essentiel ne dépend du mouvement ou du JavaScript.
 
+Le direct de la page Cultes devient un espace cinéma prioritaire, immédiatement sous le héros : écran 16:9 jusqu’à 1 600 px sur fond sombre, presque pleine largeur sur téléphone, sans rediffusions à côté. Le plein écran utilise l’API du navigateur avec repli vers les contrôles YouTube; aucun démarrage forcé de la vidéo. Les rediffusions sont conservées dans une section indépendante plus bas. La disponibilité du direct dépend de la chaîne YouTube existante.
+
 ## Structure
 - `index.html` : composition d’accueil et contenus existants réorganisés.
 - `assets/css/site.css` : base commune historique et styles du diaporama.

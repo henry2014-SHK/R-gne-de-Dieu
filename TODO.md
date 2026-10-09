@@ -22,3 +22,9 @@
 - [x] Supprimer les cinq paragraphes de fin de carte sur les dates, lieux et détails d’édition; conserver les sept descriptions et leurs objectifs.
 - [x] Retirer les boutons précédent, suivant, pause et commande d’animations; faire tourner automatiquement le diaporama sans interruption au survol ou au focus. Garder la préférence de mouvement réduit système et les économies de ressources dans un onglet masqué.
 - [x] Conserver le site principal inchangé et mettre à jour seulement la PR brouillon.
+
+## Direct immersif
+
+- [x] Donner au direct une section cinéma dédiée près du haut de la page Cultes, un lecteur grand format sur fond sombre et toute la largeur disponible sur téléphone, en conservant le ratio vidéo 16:9 sans rogner le contenu.
+- [x] Séparer les rediffusions du direct afin qu’elles ne réduisent plus sa largeur; proposer le plein écran quand le navigateur le permet et conserver l’accès YouTube de secours.
+- [x] Conserver la chaîne, les horaires, les fonds de cultes et la CSP; mettre à jour uniquement la PR brouillon #10 et l’aperçu temporaire.

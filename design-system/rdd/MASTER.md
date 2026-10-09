@@ -25,3 +25,7 @@ Les descriptions des trois cultes sont désormais posées sur leurs propres fond
 
 ## Accessibilité et robustesse
 Liens et boutons natifs, cibles de 44 px minimum pour les commandes principales, focus visible et texte contrasté. Pas de défilement détourné, écran de chargement bloquant, navigation remplacée par une animation ou contenu essentiel caché. Sans JavaScript, le contenu reste lisible et la scène fixe. Avec mouvement réduit, aucune particule animée, rotation automatique, parallaxe ou apparition n’est active. La PR reste un brouillon; aucune publication n’est autorisée par cette refonte.
+
+## Visionnage du direct
+
+Le direct dispose de sa propre section cinéma sombre, placée immédiatement après le héros de la page Cultes et avant les horaires. Le lecteur conserve un ratio 16:9, s’étend jusqu’à 1 600 px sur grand écran et occupe presque toute la largeur du téléphone. Les rediffusions sont séparées, plus bas, afin de ne pas réduire la place du direct. Le bouton « Plein écran » utilise l’API native lorsqu’elle est disponible; les contrôles de YouTube et le lien de secours restent accessibles. Ni lecture forcée, ni badge prétendant qu’un direct est actuellement en cours, ni nouvelle dépendance. Le lecteur conserve la chaîne configurée; sa disponibilité effective dépend de la diffusion YouTube.
