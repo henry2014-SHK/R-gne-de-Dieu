@@ -32,3 +32,9 @@
 ## Ordre de la page Cultes
 
 - [x] Placer le compte à rebours entre le héros « Nos rencontres » et le culte en ligne; placer les cultes précédents immédiatement après le direct, sans modifier les vidéos, les horaires ou la logique du décompte.
+
+## Écran d’attente RDD TV
+
+- [x] Extraire seulement le symbole du logo fourni, sans son fond bleu ni le texte sous le dessin; le placer en rotation lente dans l’espace du direct avec « RDD TV » et « En attente du prochain culte ».
+- [x] Conserver l’accès au direct et au plein écran; utiliser les états et erreurs du lecteur pour retirer l’attente lorsqu’une vidéo est prête/en lecture et la rétablir lorsqu’elle se termine ou devient indisponible. Prévoir un accès manuel si la réponse YouTube ne permet pas de confirmer la disponibilité.
+- [x] Respecter le mouvement réduit et conserver le brouillon sans publication.

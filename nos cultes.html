@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#080f1b">
   <meta name="description" content="Horaires des cultes à Kolwezi, célébration dominicale, directs et rediffusions de l’Église Règne de Dieu.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
   <link rel="canonical" href="https://henry2014-shk.github.io/R-gne-de-Dieu/nos%20cultes.html">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
@@ -53,15 +53,23 @@
       </div>
       <button class="live-fullscreen" type="button" data-live-fullscreen aria-controls="live-player" hidden><span aria-hidden="true">⛶</span> Plein écran</button>
     </div>
-    <div class="youtube-frame live-player" id="live-player">
-      <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCo1XCDNhFb-DUzr1VYmo8yw" title="Culte en direct — chaîne Prophète Valery Koj TV" width="1600" height="900" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+    <div class="youtube-frame live-player is-waiting" id="live-player">
+      <iframe id="rdd-live-video" data-live-src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCo1XCDNhFb-DUzr1VYmo8yw" title="Culte en direct — chaîne Prophète Valery Koj TV" width="1600" height="900" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" aria-hidden="true" tabindex="-1" allowfullscreen></iframe>
+      <div class="live-waiting" data-live-waiting>
+        <div class="live-waiting-brand">
+          <div class="live-waiting-emblem"><img src="assets/images/rdd-tv-symbole.png" width="650" height="578" alt="Symbole de l’Église Règne de Dieu : couronne, globe, croix et Bible." decoding="async"></div>
+          <p class="live-waiting-channel">RDD <span>TV</span></p>
+          <p class="live-waiting-message">En attente du prochain culte</p>
+          <button class="live-waiting-access" type="button" data-live-access hidden>Accéder au direct <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
     </div>
     <div class="live-cinema-footer">
-      <p>Le direct est disponible pendant les diffusions de la chaîne. S’il ne s’affiche pas au début du culte, actualisez la page.</p>
+      <p>Retrouvez le direct pendant les diffusions de la chaîne. Si le lecteur ne s’ouvre pas automatiquement, choisissez « Accéder au direct ».</p>
       <a href="https://www.youtube.com/@prophetevalerykoj6977/live" target="_blank" rel="noopener noreferrer">Ouvrir sur YouTube <span aria-hidden="true">↗</span></a>
     </div>
     <p class="live-fullscreen-feedback" data-live-feedback role="status" hidden>Le plein écran n’est pas disponible ici. Utilisez la commande du lecteur YouTube.</p>
-    <p class="live-privacy">Le lecteur est fourni par YouTube. La connexion à YouTube s’établit lorsque la vidéo apparaît à l’écran.</p>
+    <p class="live-privacy">Le lecteur est fourni par YouTube. La connexion à YouTube s’établit lorsque cet espace apparaît à l’écran.</p>
   </div>
 </section>
 <section class="section section--soft replay-section" aria-labelledby="replays-heading">

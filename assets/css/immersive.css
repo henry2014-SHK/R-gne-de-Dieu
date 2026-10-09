@@ -403,3 +403,25 @@ h3 { letter-spacing: -.015em; }
 .next-service-section { padding: clamp(2rem,4vw,3rem) 0; }
 .next-service-section .next-service-card { margin-top: 0; }
 .next-service-section .countdown-footnote { margin-bottom: 0; }
+
+/* RDD TV : identité d’attente, distincte d’une annonce de direct confirmé. */
+.live-player { position: relative; }
+.live-player.is-waiting { min-height: clamp(310px,45vw,760px); }
+.live-player.is-waiting iframe { visibility: hidden; pointer-events: none; }
+.live-waiting { position: absolute; inset: 0; display: grid; place-items: center; padding: 2rem 1rem; background: radial-gradient(ellipse at 50% 40%,#1b3048 0%,#0b1423 45%,#050a12 85%); }
+.live-waiting-brand { text-align: center; color: #fff; }
+.live-waiting-emblem { width: clamp(110px,15vw,230px); margin: 0 auto 1.4rem; perspective: 800px; }
+.live-waiting-emblem img { width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(241,206,129,.22)); animation: rdd-logo-turn 14s linear infinite; }
+@keyframes rdd-logo-turn { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+.live-waiting-channel { font: 600 clamp(1.5rem,3vw,2.7rem)/1.2 system-ui,sans-serif; letter-spacing: .2em; margin: 0; }
+.live-waiting-channel span { color: var(--gold-light); }
+.live-waiting-message { color: #d9e0e9; font-size: clamp(.95rem,1.5vw,1.2rem); margin: .8rem 0 0; }
+.live-waiting-access { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 44px; margin-top: 1.4rem; padding: .6rem 1rem; color: var(--gold-light); background: transparent; border: 1px solid rgba(241,206,129,.5); border-radius: var(--radius-control); font: 600 .85rem/1.4 system-ui,sans-serif; cursor: pointer; }
+.live-waiting-access:hover { background: var(--gold-light); color: var(--night); }
+.live-player:fullscreen.is-waiting { min-height: 0; }
+@media (prefers-reduced-motion: reduce) { .live-waiting-emblem img { animation: none; transform: none; } }
+@media (max-width: 720px) {
+  .live-player.is-waiting { min-height: 340px; }
+  .live-waiting { padding: 1.5rem 1rem; }
+  .live-waiting-emblem { margin-bottom: 1.2rem; }
+}

@@ -28,3 +28,7 @@ Aucun changement de coordonnées, horaires, source des photos, mode de dons ou p
 ## Ordre de lecture de la page Cultes
 
 Après la dernière revue, le compte à rebours est placé entre « Nos rencontres » et le lecteur direct. La section des cultes précédents suit immédiatement le direct. Les descriptions et horaires des trois cultes, puis la galerie dominicale, viennent ensuite. Les lecteurs, la chaîne et le calcul du décompte sont conservés; la PR reste en brouillon.
+
+## Attente RDD TV
+
+Un logo transparent extrait du symbole fourni remplace l’écran YouTube indisponible pendant l’attente, avec rotation CSS et les deux messages demandés. Le script du direct observe les états de l’API IFrame officielle pour retirer ou rétablir l’attente, et conserve l’accès manuel au lecteur en cas de réponse insuffisante. Le contrôle côté client n’interroge pas un statut indépendant de la chaîne et ne peut garantir une bascule infaillible. Aucun démarrage sonore automatique; la préférence système de mouvement réduit reste prioritaire.
