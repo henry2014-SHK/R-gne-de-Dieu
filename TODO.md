@@ -38,3 +38,8 @@
 - [x] Extraire seulement le symbole du logo fourni, sans son fond bleu ni le texte sous le dessin; le placer en rotation lente dans l’espace du direct avec « RDD TV » et « En attente du prochain culte ».
 - [x] Conserver l’accès au direct et au plein écran; utiliser les états et erreurs du lecteur pour retirer l’attente lorsqu’une vidéo est prête/en lecture et la rétablir lorsqu’elle se termine ou devient indisponible. Prévoir un accès manuel si la réponse YouTube ne permet pas de confirmer la disponibilité.
 - [x] Respecter le mouvement réduit et conserver le brouillon sans publication.
+
+## E-mail et localisation officiels
+
+- [x] Ajouter regnededieuchurch@gmail.com aux contacts et aux pieds de page; diriger l’action de partage des témoignages vers cette adresse par un lien de rédaction d’e-mail, sans prétendre qu’un message est envoyé automatiquement.
+- [x] Ajouter la position https://maps.app.goo.gl/auCexUBLsVgvCBBv7 aux contacts et aux pieds de page, sans modifier l’adresse postale ou le téléphone. Conserver les changements dans la PR brouillon #10.

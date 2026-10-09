@@ -32,3 +32,7 @@ Après la dernière revue, le compte à rebours est placé entre « Nos rencontr
 ## Attente RDD TV
 
 Un logo transparent extrait du symbole fourni remplace l’écran YouTube indisponible pendant l’attente, avec rotation CSS et les deux messages demandés. Le script du direct observe les états de l’API IFrame officielle pour retirer ou rétablir l’attente, et conserve l’accès manuel au lecteur en cas de réponse insuffisante. Le contrôle côté client n’interroge pas un statut indépendant de la chaîne et ne peut garantir une bascule infaillible. Aucun démarrage sonore automatique; la préférence système de mouvement réduit reste prioritaire.
+
+## Coordonnées officielles et témoignages
+
+L’adresse regnededieuchurch@gmail.com est affichée dans les contacts et tous les pieds de page. L’action « Envoyer mon témoignage par e-mail » ouvre la messagerie du fidèle avec ce destinataire et l’objet « Mon témoignage — Église Règne de Dieu »; aucun message n’est envoyé automatiquement et la publication d’un témoignage reste soumise à son accord. La position officielle fournie, https://maps.app.goo.gl/auCexUBLsVgvCBBv7, est reliée depuis la carte d’adresse et les pieds de page. Le lien a été vérifié et pointe vers les coordonnées -10.745585, 25.511682. Adresse postale et téléphone inchangés, PR en brouillon.

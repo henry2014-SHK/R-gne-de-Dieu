@@ -425,3 +425,6 @@ h3 { letter-spacing: -.015em; }
   .live-waiting { padding: 1.5rem 1rem; }
   .live-waiting-emblem { margin-bottom: 1.2rem; }
 }
+
+/* Coordonnées : permettre le retour à la ligne des adresses e-mail longues. */
+.contact-email, .footer-email { overflow-wrap: anywhere; }
