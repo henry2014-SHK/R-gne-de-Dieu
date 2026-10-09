@@ -43,3 +43,8 @@
 
 - [x] Ajouter regnededieuchurch@gmail.com aux contacts et aux pieds de page; diriger l’action de partage des témoignages vers cette adresse par un lien de rédaction d’e-mail, sans prétendre qu’un message est envoyé automatiquement.
 - [x] Ajouter la position https://maps.app.goo.gl/auCexUBLsVgvCBBv7 aux contacts et aux pieds de page, sans modifier l’adresse postale ou le téléphone. Conserver les changements dans la PR brouillon #10.
+
+## Diaporamas — Un temps de foi partagé
+
+- [x] Transformer les trois blocs de la section en diaporamas automatiques à transitions lentes, sans commandes visibles selon le choix déjà validé. Répartir les nouvelles photos : 8805, 8801 et 8799 pour la louange et la prédication; 8806 et 8800 pour la prière et la foi en communauté; les trois dernières, 8804, 8803 et 8802, pour l’enseignement de la Parole.
+- [x] Optimiser les photos sans modifier les originaux ni couper les sujets; conserver des images entières sur téléphone, des légendes fixes et la préférence système de mouvement réduit. Ne changer ni le direct, ni l’ordre des sections, ni les horaires; conserver la PR #10 en brouillon.
