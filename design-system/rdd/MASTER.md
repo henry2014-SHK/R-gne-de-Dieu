@@ -1,51 +1,21 @@
-# Direction UI/UX — Église Règne de Dieu
+# RDD — direction immersive
 
-## Positionnement
-Site public d’une communauté chrétienne à Kolwezi, pour les membres, les visiteurs et les personnes qui souhaitent suivre les cultes. La présence visuelle doit inspirer confiance et accueil, sans paraître institutionnelle à l’excès ni artificiellement luxueuse.
+## Intention
+La première retouche éditoriale était trop discrète. Cette direction, choisie après les références DFFRNT et la vidéo de voyage fournies par l’utilisateur, met en scène la communauté avec une entrée cinématographique, des plans photographiques et des mouvements perceptibles. Les références inspirent la composition et les effets, jamais le contenu commercial, les cristaux ou les portraits artificiels.
 
-**Personnalité :** accueillante, digne, contemporaine.
+## Signature
+Marine nocturne `#080F1B`, surface marine `#111E31`, or lumineux `#F1CE81`, or de marque `#D39A22` et ivoire `#FBF9F4`. Les lueurs sont concentrées sur le héros; les plages ivoire conservent la lisibilité des horaires et des informations pratiques. Cormorant Garamond variable, servi localement sous licence OFL et avec `font-display: swap`, porte les titres. Le texte courant reste en police système.
 
-## Principes
-- **Éditorial et lisible :** titres sérif sobres, texte courant sans sérif, lignes de lecture mesurées et hiérarchie simple.
-- **Ancré dans la communauté :** privilégier les photos authentiques et les informations pratiques réelles; ne pas fabriquer de chiffres, d’avis ou de preuves sociales.
-- **Sobriété chaleureuse :** espace généreux, détails or discrets, surfaces ivoire et bleu profond; éviter les effets décoratifs gratuits.
-- **Accessible et rapide :** HTML sémantique, navigation clavier, focus visible, cibles de commande confortables, images dimensionnées et mouvement réduit respecté.
-
-## Palette sémantique
-Ces couleurs reprennent les tokens déjà présents dans le CSS du site; les références marines et dorées restent la signature RDD.
-
-| Rôle | Valeur | Usage |
-|---|---|---|
-| Marine / texte principal | `#17243A` | Titres, navigation, bandeaux foncés |
-| Or | `#D39A22` | Accent, bouton principal, repères visuels |
-| Texte secondaire | `#465268` | Descriptions et informations secondaires |
-| Ivoire | `#FBF9F4` | Fond général |
-| Surface douce | `#F2EEE5` | Alternance de sections |
-| Blanc | `#FFFFFF` | Cartes et zones de lecture |
-| Filet | `#E8E2D6` | Séparateurs et contours discrets |
-
-Conserver un texte sombre sur l’or pour le contraste. Utiliser l’or comme texte sur fond clair uniquement dans sa variante foncée déjà définie par le site (`#986406`).
-
-## Typographie
-- **Titres :** Georgia / Times New Roman, en graisse modérée; conserver une forme de caractère éditorial.
-- **Corps et interface :** pile système `system-ui`, sans chargement externe, corps de 16 px minimum.
-- **Mesure :** limiter les paragraphes longs à environ 60–65 caractères par ligne; équilibrer les titres lorsque le navigateur le permet.
-
-## Mise en page
-- Largeur de lecture maximale autour de 1 200 px avec marges fluides.
-- Grilles de trois colonnes sur grand écran, deux à largeur intermédiaire, une sur téléphone.
-- Images de culte, affiches et portraits conservent leur ratio et restent entièrement visibles lorsque la lecture du visuel est importante.
-- Les horaires et la prochaine rencontre restent prioritaires sur la page des cultes.
-
-## Composants et interactions
-- Boutons rectangulaires à coins modestes, hauteur minimale de 44–48 px et libellés explicites; éviter les formes de pilule comme style dominant.
-- Cartes peu ombrées; état de survol perceptible sans déplacement de la mise en page.
-- Navigation mobile native et prévisible; état courant annoncé par `aria-current`.
-- Diaporama accessible avec commandes précédent/suivant et pause; suspendre l’animation automatique selon la préférence de mouvement réduit.
-- Conserver les liens externes explicites, les labels de formulaire et les anneaux de focus visibles.
+## Composition
+L’accueil s’ouvre sur une scène photographique presque plein écran. Le titre « Règne de Dieu » et son message restent centrés sur la photo, y compris sur téléphone. Deux plans photo périphériques encadrent le titre sur bureau. Ils disparaissent sur les écrans étroits pour ne pas gêner la lecture. Les valeurs sont présentées en trois panneaux décalés sur fond de nuit; sur mobile les images des panneaux sont entières, suivies de leur texte. Les sections horaires, communauté et visite alternent ivoire et marine avec de grands titres et des cadres dorés décalés.
 
 ## Mouvement
-Transitions de couleur et d’opacité discrètes, typiquement 180–240 ms. Pas de révélation de contenu qui le rendrait invisible sans JavaScript; aucune animation non essentielle lorsque `prefers-reduced-motion: reduce` est actif.
+Parallaxe de 22 px maximum sur les plans de contenu, déplacement de fond de 75 px maximum et profondeur au pointeur limitée à quelques degrés. Les apparitions sont ponctuelles, déclenchées par l’entrée dans la fenêtre et construites avec l’API Web Animations. Le contenu n’est jamais invisible par défaut. Les particules, au nombre de 36, sont de petits points lumineux et ne représentent ni des personnes ni des objets. Leur rendu est plafonné à environ 30 images/s et arrêté hors écran ou lorsque l’onglet est masqué.
 
-## À éviter
-Palette violette générique, dégradés décoratifs, métriques ou témoignages inventés, accumulation de badges/pilules, carrousels sans arrêt accessible, polices web bloquant le chargement, animations qui déplacent le contenu.
+La commande « Animations » arrête ces effets et la rotation automatique du diaporama. La préférence système de mouvement réduit reste prioritaire. La pause du diaporama seul est indépendante. La rotation se suspend également lorsque le clavier est dans la scène ou que le pointeur survole ses commandes; le survol du décor ne bloque pas constamment la lecture sur bureau.
+
+## Conservation
+Les images OneDrive, Rct, Pvk et le portrait réel du pasteur sont conservés. Les horaires (dimanche 9 h–12 h 30; mardi et jeudi 17 h–19 h 20), coordonnées, biographie, informations d’événements et mode de dons ne changent pas. Les affiches et images de contenu restent entières sur petits écrans. Aucune dépendance React, GSAP ou bibliothèque de particules n’est ajoutée au site statique.
+
+## Accessibilité et robustesse
+Liens et boutons natifs, cibles de 44 px minimum pour les commandes principales, focus visible et texte contrasté. Pas de défilement détourné, écran de chargement bloquant, navigation remplacée par une animation ou contenu essentiel caché. Sans JavaScript, le contenu reste lisible et la scène fixe. Avec mouvement réduit, aucune particule animée, rotation automatique, parallaxe ou apparition n’est active. La PR reste un brouillon; aucune publication n’est autorisée par cette refonte.

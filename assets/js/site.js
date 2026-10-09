@@ -59,13 +59,16 @@
 
   const slideshow = document.querySelector('[data-slideshow]');
   if (slideshow) {
+    const scene = slideshow.closest('.page-hero--home') || slideshow;
     const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
     const status = slideshow.querySelector('[data-slideshow-status]');
-    const counter = slideshow.querySelector('[data-slide-current]');
-    const previous = slideshow.querySelector('[data-slideshow-prev]');
-    const next = slideshow.querySelector('[data-slideshow-next]');
-    const toggle = slideshow.querySelector('[data-slideshow-toggle]');
-    const toggleLabel = slideshow.querySelector('[data-toggle-label]');
+    const counter = scene.querySelector('[data-slide-current]');
+    const previous = scene.querySelector('[data-slideshow-prev]');
+    const next = scene.querySelector('[data-slideshow-next]');
+    const toggle = scene.querySelector('[data-slideshow-toggle]');
+    const toggleLabel = scene.querySelector('[data-toggle-label]');
+    const controls = scene.querySelector('.hero-slideshow-controls') || slideshow;
+    controls.hidden = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const interval = Math.max(9000, Number(slideshow.dataset.interval) || 14000);
     let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
@@ -74,6 +77,7 @@
     let pointerInside = false;
     let focusWithin = false;
     let interactionPaused = false;
+    let effectsDisabled = false;
 
     const stop = () => {
       if (timer !== null) window.clearInterval(timer);
@@ -92,20 +96,21 @@
     };
     const syncControls = () => {
       const motionReduced = reducedMotion.matches;
-      slideshow.classList.toggle('is-paused', userPaused || interactionPaused || motionReduced || document.hidden);
+      slideshow.classList.toggle('is-paused', userPaused || effectsDisabled || interactionPaused || motionReduced || document.hidden);
       if (toggle) {
-        toggle.disabled = motionReduced;
+        toggle.disabled = motionReduced || effectsDisabled;
         toggle.setAttribute('aria-pressed', String(userPaused));
         toggle.setAttribute('aria-label', motionReduced
           ? 'Défilement automatique désactivé selon votre préférence de mouvement réduit'
-          : userPaused ? 'Reprendre le diaporama' : 'Mettre en pause le diaporama');
-        if (toggleLabel) toggleLabel.textContent = motionReduced ? 'Mouvement réduit' : userPaused ? 'Reprendre' : 'Pause';
+          : effectsDisabled ? 'Défilement automatique désactivé avec les animations'
+            : userPaused ? 'Reprendre le diaporama' : 'Mettre en pause le diaporama');
+        if (toggleLabel) toggleLabel.textContent = motionReduced ? 'Mouvement réduit' : effectsDisabled ? 'Arrêté' : userPaused ? 'Reprendre' : 'Pause';
       }
     };
     const start = () => {
       stop();
       syncControls();
-      if (slides.length > 1 && !userPaused && !interactionPaused && !reducedMotion.matches && !document.hidden) {
+      if (slides.length > 1 && !userPaused && !effectsDisabled && !interactionPaused && !reducedMotion.matches && !document.hidden) {
         timer = window.setInterval(() => showSlide(activeIndex + 1), interval);
       }
     };
@@ -126,15 +131,16 @@
     previous?.addEventListener('click', () => { showSlide(activeIndex - 1, true); start(); });
     next?.addEventListener('click', () => { showSlide(activeIndex + 1, true); start(); });
     toggle?.addEventListener('click', () => { userPaused = !userPaused; start(); });
-    slideshow.addEventListener('pointerenter', () => { pointerInside = true; syncInteractionPause(); });
-    slideshow.addEventListener('pointerleave', () => { pointerInside = false; syncInteractionPause(); });
-    slideshow.addEventListener('focusin', () => { focusWithin = true; syncInteractionPause(); });
-    slideshow.addEventListener('focusout', (event) => {
-      if (!slideshow.contains(event.relatedTarget)) {
+    controls.addEventListener('pointerenter', () => { pointerInside = true; syncInteractionPause(); });
+    controls.addEventListener('pointerleave', () => { pointerInside = false; syncInteractionPause(); });
+    scene.addEventListener('focusin', () => { focusWithin = true; syncInteractionPause(); });
+    scene.addEventListener('focusout', (event) => {
+      if (!scene.contains(event.relatedTarget)) {
         focusWithin = false;
         syncInteractionPause();
       }
     });
+    document.addEventListener('rdd:motion', (event) => { effectsDisabled = !event.detail.enabled; start(); });
     reducedMotion.addEventListener?.('change', start);
     document.addEventListener('visibilitychange', start);
     start();

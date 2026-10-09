@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbf9f4">
+  <meta name="theme-color" content="#080f1b">
   <meta name="description" content="Église Règne de Dieu à Kolwezi : que Jésus-Christ seul règne dans tous les secteurs.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; form-action 'self'; upgrade-insecure-requests">
   <link rel="canonical" href="https://henry2014-shk.github.io/R-gne-de-Dieu/index.html">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/immersive.css">
+  <link rel="preload" href="assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
   <title>Église Règne de Dieu | Kolwezi</title>
 </head>
-<body>
+<body class="home-immersive">
 <a class="skip-link" href="#main">Aller au contenu</a>
 <header class="site-header">
   <div class="container header-inner">
@@ -32,7 +34,7 @@
   </div>
 </header>
 <main id="main">
-  <section class="page-hero page-hero--home">
+  <section class="page-hero page-hero--home" aria-labelledby="welcome-heading">
     <div class="hero-slideshow" data-slideshow data-interval="14000" role="group" aria-roledescription="diaporama" aria-label="Photos de la vie de l’Église Règne de Dieu">
       <img class="hero-slide is-active" src="assets/images/accueil-culte-01.webp" width="1079" height="720" alt="" decoding="async" fetchpriority="high" data-description="Un prédicateur partage un message à la chaire lors d’un culte dominical.">
       <img class="hero-slide" src="assets/images/accueil-culte-02.webp" width="934" height="1400" alt="" decoding="async" loading="lazy" data-description="Un prédicateur s’adresse à l’assemblée depuis la chaire.">
@@ -46,68 +48,86 @@
       <img class="hero-slide" src="assets/images/accueil-culte-10.webp" width="1029" height="1400" alt="" decoding="async" loading="lazy" data-description="Les fidèles se réunissent pour le temps de prière.">
       <img class="hero-slide" src="assets/images/accueil-culte-11.webp" width="1077" height="655" alt="" decoding="async" loading="lazy" data-description="L’assemblée est réunie lors d’un culte dominical.">
       <p class="visually-hidden" data-slideshow-status aria-live="off" aria-atomic="true">Photo 1 sur 11. Un prédicateur partage un message à la chaire lors d’un culte dominical.</p>
-      <div class="hero-slideshow-controls" role="group" aria-label="Commandes du diaporama">
-        <button class="hero-slide-control" type="button" data-slideshow-prev aria-label="Afficher la photo précédente" title="Photo précédente"><span aria-hidden="true">‹</span></button>
-        <span class="hero-slide-count" aria-hidden="true"><span data-slide-current>1</span> / 11</span>
-        <button class="hero-slide-control" type="button" data-slideshow-next aria-label="Afficher la photo suivante" title="Photo suivante"><span aria-hidden="true">›</span></button>
-        <button class="hero-slide-control hero-slide-toggle" type="button" data-slideshow-toggle aria-label="Mettre en pause le diaporama" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><span data-toggle-label>Pause</span></button>
-      </div>
     </div>
-    <div class="container">
+    <div class="hero-atmosphere" aria-hidden="true"><canvas data-atmosphere></canvas></div>
+    <figure class="floating-photo floating-photo--left" data-depth="0.035" aria-hidden="true"><div class="float-inner"><img src="assets/images/accueil-culte-05.webp" width="934" height="1400" alt="" decoding="async" loading="lazy"></div></figure>
+    <figure class="floating-photo floating-photo--right" data-depth="0.05" aria-hidden="true"><div class="float-inner"><img src="assets/images/accueil-culte-09.webp" width="934" height="1400" alt="" decoding="async" loading="lazy"></div></figure>
+    <div class="container hero-copy" data-reveal>
       <p class="eyebrow">Une communauté de foi à Kolwezi</p>
-      <h1>Règne de Dieu</h1>
+      <h1 id="welcome-heading">Règne de Dieu</h1>
       <p class="home-tagline">Que Jésus-Christ seul règne dans tous les secteurs.</p>
       <div class="hero-actions">
         <a class="button" href="nos cultes.html">Découvrir nos cultes</a>
         <a class="button button--light" href="contacts.html">Nous rendre visite</a>
       </div>
     </div>
+    <a class="hero-scroll" href="#notre-foi">Découvrir</a>
+    <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true" hidden><span data-motion-label>Animations actives</span></button>
+    <div class="hero-slideshow-controls" role="group" aria-label="Commandes du diaporama" hidden>
+      <button class="hero-slide-control" type="button" data-slideshow-prev aria-label="Afficher la photo précédente" title="Photo précédente"><span aria-hidden="true">‹</span></button>
+      <span class="hero-slide-count" aria-hidden="true"><span data-slide-current>1</span> / 11</span>
+      <button class="hero-slide-control" type="button" data-slideshow-next aria-label="Afficher la photo suivante" title="Photo suivante"><span aria-hidden="true">›</span></button>
+      <button class="hero-slide-control hero-slide-toggle" type="button" data-slideshow-toggle aria-label="Mettre en pause le diaporama" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><span data-toggle-label>Pause</span></button>
+    </div>
   </section>
-  <section class="section section--white">
+  <section class="section home-values" id="notre-foi" aria-labelledby="values-heading">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="kicker">Ce qui nous rassemble</p>
-        <h2>Une foi qui se vit au quotidien</h2>
+        <h2 id="values-heading">Une foi qui se vit<br>au quotidien</h2>
         <p>Ces valeurs guident notre vie communautaire et notre engagement auprès des autres.</p>
       </div>
-      <div class="card-grid">
-        <article class="card"><div class="card-body"><div class="value-mark" aria-hidden="true">01</div><h3>Justice</h3><p>Agir avec équité, soutenir les personnes vulnérables et contribuer au bien commun.</p></div></article>
-        <article class="card"><div class="card-body"><div class="value-mark" aria-hidden="true">02</div><h3>Conquête spirituelle</h3><p>S’appuyer sur la prière et la foi pour servir la communauté avec espérance.</p></div></article>
-        <article class="card"><div class="card-body"><div class="value-mark" aria-hidden="true">03</div><h3>Sainteté</h3><p>Vivre une foi consacrée, guidée par la Parole et la fidélité à Dieu.</p></div></article>
+      <div class="values-stage">
+        <article class="value-panel" data-depth="0.025">
+          <img src="assets/images/accueil-culte-06.webp" width="1079" height="1250" loading="lazy" decoding="async" alt="Des fidèles réunis pendant la célébration.">
+          <div class="value-panel-copy" data-reveal><span class="value-symbol" aria-hidden="true">01</span><h3>Justice</h3><p>Agir avec équité, soutenir les personnes vulnérables et contribuer au bien commun.</p></div>
+        </article>
+        <article class="value-panel" data-depth="0.05">
+          <img src="assets/images/accueil-culte-04.webp" width="934" height="1400" loading="lazy" decoding="async" alt="Un temps de prière à l’église.">
+          <div class="value-panel-copy" data-reveal data-reveal-delay="80"><span class="value-symbol" aria-hidden="true">02</span><h3>Conquête spirituelle</h3><p>S’appuyer sur la prière et la foi pour servir la communauté avec espérance.</p></div>
+        </article>
+        <article class="value-panel" data-depth="0.035">
+          <img src="assets/images/accueil-culte-10.webp" width="1029" height="1400" loading="lazy" decoding="async" alt="Les fidèles prennent part à la vie de l’église.">
+          <div class="value-panel-copy" data-reveal data-reveal-delay="160"><span class="value-symbol" aria-hidden="true">03</span><h3>Sainteté</h3><p>Vivre une foi consacrée, guidée par la Parole et la fidélité à Dieu.</p></div>
+        </article>
       </div>
     </div>
   </section>
-  <section class="section section--soft">
+  <section class="section home-meetings" aria-labelledby="meetings-heading">
     <div class="container split">
-      <div class="split-copy">
+      <div class="split-copy" data-reveal>
         <p class="kicker">Nos rencontres</p>
-        <h2>Un temps pour se retrouver et grandir</h2>
-        <p>Enseignement biblique, prière et louange rythment la vie de l’église. Les horaires des rencontres peuvent évoluer. Contactez-nous avant de vous déplacer pour les confirmer.</p>
-        <ul class="info-list"><li>Dimanche — culte dominical, 9 h à 12 h 30</li><li>Mardi — enseignement et prière, 17 h à 19 h 20</li><li>Jeudi — prière, délivrance, guérison et restauration, 17 h à 19 h 20</li></ul>
-        <p><a class="button button--dark" href="nos cultes.html">Voir les rencontres</a></p>
+        <h2 id="meetings-heading">Se retrouver.<br>Grandir ensemble.</h2>
+        <p>Enseignement biblique, prière et louange rythment la vie de l’église.</p>
+        <dl class="home-schedule">
+          <div><dt>Dimanche</dt><dd><strong>9 h à 12 h 30</strong>Culte dominical</dd></div>
+          <div><dt>Mardi</dt><dd><strong>17 h à 19 h 20</strong>Enseignement et prière</dd></div>
+          <div><dt>Jeudi</dt><dd><strong>17 h à 19 h 20</strong>Prière, délivrance, guérison et restauration</dd></div>
+        </dl>
+        <p class="text-muted">Les horaires peuvent évoluer. Contactez-nous avant votre venue pour les confirmer.</p>
+        <a class="button button--dark" href="nos cultes.html">Horaires et cultes en ligne</a>
       </div>
-      <img class="split-image split-image--portrait" src="assets/images/rct.jpg" width="1080" height="1619" loading="lazy" alt="Une fidèle lors d’un culte à l’Église Règne de Dieu">
+      <div class="meeting-portrait" data-depth="0.04"><img src="assets/images/rct.jpg" width="1080" height="1619" loading="lazy" decoding="async" alt="Une fidèle lors d’un culte à l’Église Règne de Dieu"></div>
     </div>
   </section>
-  <section class="section">
+  <section class="section home-community" aria-labelledby="community-heading">
     <div class="container split">
-      <img class="split-image split-image--landscape" src="assets/images/pvk.jpg" width="1079" height="720" loading="lazy" alt="Le Prophète Valéry Koj prêche lors d’un culte dominical à l’Église Règne de Dieu">
-      <div class="split-copy">
+      <div class="community-frame" data-depth="0.035"><img src="assets/images/pvk.jpg" width="1079" height="720" loading="lazy" decoding="async" alt="Le Prophète Valéry Koj prêche lors d’un culte dominical à l’Église Règne de Dieu"></div>
+      <div class="split-copy" data-reveal>
         <p class="kicker">La communauté</p>
-        <h2>Une église tournée vers la foi et les autres</h2>
+        <h2 id="community-heading">La foi nous rassemble.<br>La fraternité nous fait grandir.</h2>
         <p>Nous accompagnons chacun dans sa croissance spirituelle, cultivons la fraternité et mettons nos talents au service de la communauté.</p>
-        <p><a class="button button--dark" href="propos.html">En savoir plus sur l’église</a></p>
+        <a class="scene-link" href="propos.html">Découvrir l’église</a><br>
+        <a class="scene-link" href="pasteur.html">Rencontrer le pasteur visionnaire</a>
       </div>
     </div>
   </section>
-  <section class="section section--white">
-    <div class="container">
-      <div class="callout">
-        <p class="eyebrow">Vous êtes les bienvenus</p>
-        <h2>Venez partager un temps de prière avec nous</h2>
-        <p>Retrouvez-nous à Kolwezi, avenue Sendwe/3Z. Repère : derrière Kin Marché Arcadia.</p>
-        <a class="button" href="contacts.html">Préparer ma visite</a>
-      </div>
+  <section class="home-invite" aria-labelledby="visit-heading">
+    <div class="container" data-reveal>
+      <p class="kicker">Vous êtes les bienvenus</p>
+      <h2 id="visit-heading">Un lieu pour prier.<br>Une communauté à rencontrer.</h2>
+      <p>Retrouvez-nous à Kolwezi, avenue Sendwe/3Z. Repère : derrière Kin Marché Arcadia.</p>
+      <a class="button button--dark" href="contacts.html">Préparer ma visite</a>
     </div>
   </section>
 </main>
@@ -122,5 +142,6 @@
   </div>
 </footer>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/immersive.js" defer></script>
 </body>
 </html>

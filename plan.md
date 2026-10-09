@@ -1,0 +1,24 @@
+# Refonte immersive RDD — brouillon PR #10
+
+La retouche éditoriale précédente n’était pas assez visible. Cette passe répond aux références visuelles et vidéos fournies : expérience cinématographique, profondeur, grands caractères et mouvement clairement perceptible.
+
+## Direction
+- Marine de nuit et ivoire, lueurs d’or en signature; aucun remplacement des photos authentiques par des personnes générées.
+- Titres Cormorant Garamond servis localement avec repli Georgia; interface en police système.
+- Accueil presque plein écran, titre central sur la photo, composition en plusieurs plans et éléments photographiques flottants sur grand écran.
+- Trois valeurs en panneaux photographiques profonds; horaires éditoriaux prioritaires; communauté et invitation en séquences alternées claires et foncées.
+- Parallaxe modérée au défilement, profondeur liée au pointeur sur les visuels non interactifs de bureau, entrées animées et points lumineux discrets. Aucun défilement détourné.
+- Commande visible « Animations » désactivant les effets et la rotation automatique, indépendamment de la pause du seul diaporama. La préférence système de mouvement réduit reste prioritaire.
+- Le titre demeure sur la photo en mobile. Les images de contenu et affiches restent entières. Rien d’essentiel ne dépend du mouvement ou du JavaScript.
+
+## Structure
+- `index.html` : composition d’accueil et contenus existants réorganisés.
+- `assets/css/site.css` : base commune historique et styles du diaporama.
+- `assets/css/immersive.css` : langage visuel, composants, responsive et états de mouvement.
+- `assets/js/site.js` : menu, compte à rebours et diaporama existants.
+- `assets/js/immersive.js` : préférence d’effets, parallaxe, profondeur et particules; JS natif sans bibliothèque lourde.
+- `assets/fonts/` : police locale et licence libre.
+- `design-system/rdd/MASTER.md` : décisions de référence pour la suite.
+
+## Limites conservées
+Aucun changement de coordonnées, horaires, biographie, source des photos, mode de dons ou politique CSP. Aucun paiement, aucune publication permanente et aucune fusion; mise à jour de la PR brouillon uniquement.
