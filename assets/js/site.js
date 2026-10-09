@@ -71,6 +71,9 @@
     let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
     let userPaused = false;
     let timer = null;
+    let pointerInside = false;
+    let focusWithin = false;
+    let interactionPaused = false;
 
     const stop = () => {
       if (timer !== null) window.clearInterval(timer);
@@ -89,7 +92,7 @@
     };
     const syncControls = () => {
       const motionReduced = reducedMotion.matches;
-      slideshow.classList.toggle('is-paused', userPaused || motionReduced || document.hidden);
+      slideshow.classList.toggle('is-paused', userPaused || interactionPaused || motionReduced || document.hidden);
       if (toggle) {
         toggle.disabled = motionReduced;
         toggle.setAttribute('aria-pressed', String(userPaused));
@@ -102,8 +105,19 @@
     const start = () => {
       stop();
       syncControls();
-      if (slides.length > 1 && !userPaused && !reducedMotion.matches && !document.hidden) {
+      if (slides.length > 1 && !userPaused && !interactionPaused && !reducedMotion.matches && !document.hidden) {
         timer = window.setInterval(() => showSlide(activeIndex + 1), interval);
+      }
+    };
+    const syncInteractionPause = () => {
+      const paused = pointerInside || focusWithin;
+      if (paused === interactionPaused) return;
+      interactionPaused = paused;
+      if (paused) {
+        stop();
+        syncControls();
+      } else {
+        start();
       }
     };
 
@@ -112,6 +126,15 @@
     previous?.addEventListener('click', () => { showSlide(activeIndex - 1, true); start(); });
     next?.addEventListener('click', () => { showSlide(activeIndex + 1, true); start(); });
     toggle?.addEventListener('click', () => { userPaused = !userPaused; start(); });
+    slideshow.addEventListener('pointerenter', () => { pointerInside = true; syncInteractionPause(); });
+    slideshow.addEventListener('pointerleave', () => { pointerInside = false; syncInteractionPause(); });
+    slideshow.addEventListener('focusin', () => { focusWithin = true; syncInteractionPause(); });
+    slideshow.addEventListener('focusout', (event) => {
+      if (!slideshow.contains(event.relatedTarget)) {
+        focusWithin = false;
+        syncInteractionPause();
+      }
+    });
     reducedMotion.addEventListener?.('change', start);
     document.addEventListener('visibilitychange', start);
     start();
