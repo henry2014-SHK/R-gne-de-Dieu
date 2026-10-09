@@ -24,3 +24,7 @@ Le direct de la page Cultes devient un espace cinéma prioritaire, immédiatemen
 
 ## Limites conservées
 Aucun changement de coordonnées, horaires, source des photos, mode de dons ou politique CSP. Après revue, la biographie est allégée des études, les descriptions fournies sont intégrées et les détails d’édition des événements sont retirés. Les fonds photographiques utilisent des dérivés recadrés sans bandeaux. Aucun paiement, aucune publication permanente et aucune fusion; mise à jour de la PR brouillon uniquement.
+
+## Ordre de lecture de la page Cultes
+
+Après la dernière revue, le compte à rebours est placé entre « Nos rencontres » et le lecteur direct. La section des cultes précédents suit immédiatement le direct. Les descriptions et horaires des trois cultes, puis la galerie dominicale, viennent ensuite. Les lecteurs, la chaîne et le calcul du décompte sont conservés; la PR reste en brouillon.

@@ -28,3 +28,7 @@
 - [x] Donner au direct une section cinéma dédiée près du haut de la page Cultes, un lecteur grand format sur fond sombre et toute la largeur disponible sur téléphone, en conservant le ratio vidéo 16:9 sans rogner le contenu.
 - [x] Séparer les rediffusions du direct afin qu’elles ne réduisent plus sa largeur; proposer le plein écran quand le navigateur le permet et conserver l’accès YouTube de secours.
 - [x] Conserver la chaîne, les horaires, les fonds de cultes et la CSP; mettre à jour uniquement la PR brouillon #10 et l’aperçu temporaire.
+
+## Ordre de la page Cultes
+
+- [x] Placer le compte à rebours entre le héros « Nos rencontres » et le culte en ligne; placer les cultes précédents immédiatement après le direct, sans modifier les vidéos, les horaires ou la logique du décompte.

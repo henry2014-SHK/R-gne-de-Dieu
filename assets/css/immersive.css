@@ -399,3 +399,7 @@ h3 { letter-spacing: -.015em; }
   .cultes-hero-actions { flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: flex-start; }
   .cultes-hero-actions .button { width: auto; }
 }
+
+.next-service-section { padding: clamp(2rem,4vw,3rem) 0; }
+.next-service-section .next-service-card { margin-top: 0; }
+.next-service-section .countdown-footnote { margin-bottom: 0; }
