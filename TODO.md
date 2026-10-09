@@ -58,3 +58,9 @@
 ## Doctrine des Saintes Écritures
 
 - [x] Remplacer le bloc « Comprendre le baptême » par « La doctrine des Saintes Écritures », avec les fondements d’Hébreux 6:1-2 : renoncement aux œuvres mortes, foi en Dieu, doctrine des baptêmes, imposition des mains, résurrection des morts et jugement éternel. Harmoniser l’introduction et la description de la page; conserver l’évangélisation, le discipolat, les leçons d’affermissement et le brouillon.
+
+## Dons Mobile Money — numéro 0975254743
+
+- [x] Préparer une page claire pour le transfert Airtel Money au numéro communiqué, avec copie du numéro et instructions, sans formulaire de PIN, OTP ou fausse confirmation de don. Ne pas annoncer le même numéro comme portefeuille Orange Money ou M-Pesa.
+- [x] Préparer l’intégration compatible avec GitHub Pages par un véritable lien de paiement hébergé et sauvegarder en brouillon séparé; aucun secret ne doit apparaître dans le site.
+- [ ] Activer le compte marchand accepté au nom du titulaire réel de l’église et confirmer les reversements vers 0975254743, les frais, devises et opérateurs. Obtenir un lien de don réel ou les accès API via une saisie sécurisée; aucune création de compte financier, attestation, acceptation de contrat ou transaction soumise sans étape utilisateur requise.

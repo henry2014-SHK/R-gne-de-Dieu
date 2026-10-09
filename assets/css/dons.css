@@ -1,0 +1,22 @@
+.donation-layout { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: clamp(2rem,6vw,5rem); align-items: start; }
+.donation-copy h2,.donation-help h2 { font-family: var(--display); font-size: clamp(2.1rem,4vw,3.4rem); line-height: 1.08; text-wrap: balance; }
+.donation-steps { counter-reset: donation-step; list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.5rem; }
+.donation-steps li { counter-increment: donation-step; position: relative; padding-left: 2.8rem; }
+.donation-steps li::before { content: counter(donation-step,decimal-leading-zero); position: absolute; left: 0; top: .2rem; color: var(--gold-dark); font-weight: 600; }
+.donation-steps h3 { font-family: var(--display); font-size: 1.55rem; line-height: 1.2; margin: 0 0 .5rem; }
+.donation-steps p { margin: 0; color: var(--ink-soft); }
+.donation-account { padding: clamp(1.25rem,3vw,2.5rem); background: var(--night); color: #fff; border: 1px solid #38404d; border-radius: var(--radius); min-width: 0; }
+.donation-account .eyebrow { color: var(--gold-light); }
+.donation-account h2 { font-family: var(--display); color: #fff; font-size: 2rem; margin: 0; }
+.deposit-number { font-size: clamp(1.5rem,3vw,2.7rem); font-weight: 600; letter-spacing: .03em; font-variant-numeric: tabular-nums; margin: 1.3rem 0 .5rem; overflow-wrap: anywhere; user-select: all; }
+.deposit-international,.donation-method-note { color: #c5cedc; font-size: .875rem; overflow-wrap: anywhere; }
+.donation-account button[hidden] { display: none; }
+.donation-account .button { min-height: 44px; margin-top: 1rem; max-width: 100%; }
+.copy-status { color: #ebd69e; font-size: .875rem; min-height: 1.5rem; margin-bottom: 1rem; }
+.donation-notice { border-top: 1px solid #38404d; margin-top: 1rem; padding-top: 1.25rem; }
+.donation-notice h3 { color: #fff; font-size: 1rem; margin: 0 0 .5rem; }
+.donation-notice p { color: #c5cedc; font-size: .9rem; }
+.donation-help { display: flex; align-items: center; gap: 2rem; justify-content: space-between; }
+.donation-help > div { max-width: 65ch; }
+.donation-help > a { flex-shrink: 0; }
+@media (max-width: 800px) { .donation-layout { grid-template-columns: minmax(0,1fr); } .donation-help { flex-direction: column; align-items: flex-start; } }
