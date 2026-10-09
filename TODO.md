@@ -48,3 +48,9 @@
 
 - [x] Transformer les trois blocs de la section en diaporamas automatiques à transitions lentes, sans commandes visibles selon le choix déjà validé. Répartir les nouvelles photos : 8805, 8801 et 8799 pour la louange et la prédication; 8806 et 8800 pour la prière et la foi en communauté; les trois dernières, 8804, 8803 et 8802, pour l’enseignement de la Parole.
 - [x] Optimiser les photos sans modifier les originaux ni couper les sujets; conserver des images entières sur téléphone, des légendes fixes et la préférence système de mouvement réduit. Ne changer ni le direct, ni l’ordre des sections, ni les horaires; conserver la PR #10 en brouillon.
+
+## Formation et affermissement chrétien
+
+- [x] Présenter la formation comme un parcours pour faire croître le chrétien dans la foi, centré sur gagner les âmes à Christ, le baptême et le discipolat.
+- [x] Intégrer les thèmes des leçons d’affermissement : vie nouvelle en Jésus-Christ, communion avec lui, méditation de la Parole, prière, croissance chrétienne, communion fraternelle, amour fraternel et mission de faire des disciples. Rédiger comme l’église, sans référence au PDF comme source, sans calendrier inventé ni reprise de ses anciennes coordonnées.
+- [x] Conserver l’identité immersive, les coordonnées actuelles et le brouillon #10; ne pas publier le document fourni ou le site principal.

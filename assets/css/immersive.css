@@ -438,3 +438,11 @@ h3 { letter-spacing: -.015em; }
 @media (prefers-reduced-motion: reduce) {
   .gallery-grid .faith-slide-track .faith-slide { transition: none; }
 }
+
+/* Affermissement : un parcours de lecture, sans cartes superflues. */
+.formation-lessons { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem 3rem; list-style: none; margin: 0; padding: 0; counter-reset: formation-lesson; }
+.formation-lessons li { counter-increment: formation-lesson; position: relative; padding: 1.25rem 0 0 2.9rem; border-top: 1px solid var(--line); min-width: 0; }
+.formation-lessons li::before { content: counter(formation-lesson,decimal-leading-zero); position: absolute; left: 0; top: 1.4rem; color: var(--gold-dark); font: 600 .9rem/1.4 system-ui,sans-serif; }
+.formation-lessons h3 { font-family: var(--display); font-size: clamp(1.5rem,2vw,1.9rem); font-weight: 600; line-height: 1.2; margin: 0 0 .8rem; }
+.formation-lessons p { color: var(--ink-soft); margin: 0; }
+@media (max-width: 720px) { .formation-lessons { grid-template-columns: minmax(0,1fr); gap: 1.7rem; } }
