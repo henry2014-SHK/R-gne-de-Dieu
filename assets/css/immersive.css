@@ -308,3 +308,52 @@ h3 { letter-spacing: -.015em; }
   .countdown-unit { min-width: 0; }
   .countdown-label { overflow-wrap: anywhere; text-align: center; }
 }
+
+/* Cultes : un fond propre par programme, texte indépendant de l’affiche. */
+.service-scene {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  overflow: hidden;
+  padding: clamp(1.5rem,4vw,3rem);
+  margin: 1.5rem 0;
+  border: 1px solid rgba(241,206,129,.3);
+  border-radius: var(--radius);
+  background: var(--night);
+  color: #fff;
+}
+.service-scene:first-of-type { border-top: 1px solid rgba(241,206,129,.3); }
+.service-scene-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.service-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,rgba(8,15,27,.92),rgba(8,15,27,.82) 60%,rgba(8,15,27,.5));
+}
+.service-scene--dimanche .service-scene-image { object-position: 25% 35%; }
+.service-scene--dimanche::before { background: linear-gradient(90deg,rgba(8,15,27,.84),rgba(8,15,27,.89) 65%,rgba(8,15,27,.6)); }
+.service-scene-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.4rem; }
+.service-scene .schedule-day { color: var(--gold-light); font-size: 2rem; }
+.service-scene .schedule-time { color: #fff; }
+.service-scene-copy { max-width: 70ch; }
+.service-scene h3 { font-size: clamp(2.2rem,4vw,3.25rem); line-height: 1.08; margin-bottom: 1rem; }
+.service-scene .service-scene-copy p { color: #f1f3f7; margin-top: .9rem; }
+.service-scene .service-scene-copy .program-tagline { color: #fff; font-weight: 600; }
+@media (max-width: 720px) {
+  .service-scene { padding: 1.4rem; }
+  .service-scene-header { flex-wrap: wrap; gap: .4rem .8rem; }
+  .service-scene .schedule-day { font-size: 1.7rem; }
+  .service-scene .schedule-time { font-size: 1rem; white-space: normal; }
+  .service-scene::before { background: rgba(8,15,27,.82); }
+  .service-scene--dimanche::before { background: rgba(8,15,27,.85); }
+  .service-scene--jeudi .service-scene-image { object-position: 50% 30%; }
+}

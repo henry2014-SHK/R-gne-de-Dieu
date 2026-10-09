@@ -59,89 +59,25 @@
 
   const slideshow = document.querySelector('[data-slideshow]');
   if (slideshow) {
-    const scene = slideshow.closest('.page-hero--home') || slideshow;
     const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
-    const status = slideshow.querySelector('[data-slideshow-status]');
-    const counter = scene.querySelector('[data-slide-current]');
-    const previous = scene.querySelector('[data-slideshow-prev]');
-    const next = scene.querySelector('[data-slideshow-next]');
-    const toggle = scene.querySelector('[data-slideshow-toggle]');
-    const toggleLabel = scene.querySelector('[data-toggle-label]');
-    const controls = scene.querySelector('.hero-slideshow-controls') || slideshow;
-    controls.hidden = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const interval = Math.max(9000, Number(slideshow.dataset.interval) || 14000);
-    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
-    let userPaused = false;
+    let index = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
     let timer = null;
-    let pointerInside = false;
-    let focusWithin = false;
-    let interactionPaused = false;
-    let effectsDisabled = false;
-
-    const stop = () => {
-      if (timer !== null) window.clearInterval(timer);
-      timer = null;
-    };
-    const showSlide = (index, announce = false) => {
+    const showSlide = () => {
       if (!slides.length) return;
-      activeIndex = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
-      if (counter) counter.textContent = String(activeIndex + 1);
-      if (status) {
-        status.setAttribute('aria-live', announce ? 'polite' : 'off');
-        status.textContent = `Photo ${activeIndex + 1} sur ${slides.length}. ${slides[activeIndex].dataset.description || ''}`;
-        if (announce) window.setTimeout(() => status.setAttribute('aria-live', 'off'), 1500);
-      }
-    };
-    const syncControls = () => {
-      const motionReduced = reducedMotion.matches;
-      slideshow.classList.toggle('is-paused', userPaused || effectsDisabled || interactionPaused || motionReduced || document.hidden);
-      if (toggle) {
-        toggle.disabled = motionReduced || effectsDisabled;
-        toggle.setAttribute('aria-pressed', String(userPaused));
-        toggle.setAttribute('aria-label', motionReduced
-          ? 'Défilement automatique désactivé selon votre préférence de mouvement réduit'
-          : effectsDisabled ? 'Défilement automatique désactivé avec les animations'
-            : userPaused ? 'Reprendre le diaporama' : 'Mettre en pause le diaporama');
-        if (toggleLabel) toggleLabel.textContent = motionReduced ? 'Mouvement réduit' : effectsDisabled ? 'Arrêté' : userPaused ? 'Reprendre' : 'Pause';
-      }
+      index = (index + 1) % slides.length;
+      slides.forEach((slide, n) => slide.classList.toggle('is-active', n === index));
     };
     const start = () => {
-      stop();
-      syncControls();
-      if (slides.length > 1 && !userPaused && !effectsDisabled && !interactionPaused && !reducedMotion.matches && !document.hidden) {
-        timer = window.setInterval(() => showSlide(activeIndex + 1), interval);
+      if (timer !== null) window.clearInterval(timer);
+      timer = null;
+      slideshow.classList.toggle('is-paused', reducedMotion.matches || document.hidden);
+      if (slides.length > 1 && !reducedMotion.matches && !document.hidden) {
+        timer = window.setInterval(showSlide, interval);
       }
     };
-    const syncInteractionPause = () => {
-      const paused = pointerInside || focusWithin;
-      if (paused === interactionPaused) return;
-      interactionPaused = paused;
-      if (paused) {
-        stop();
-        syncControls();
-      } else {
-        start();
-      }
-    };
-
-    showSlide(activeIndex);
-    syncControls();
-    previous?.addEventListener('click', () => { showSlide(activeIndex - 1, true); start(); });
-    next?.addEventListener('click', () => { showSlide(activeIndex + 1, true); start(); });
-    toggle?.addEventListener('click', () => { userPaused = !userPaused; start(); });
-    controls.addEventListener('pointerenter', () => { pointerInside = true; syncInteractionPause(); });
-    controls.addEventListener('pointerleave', () => { pointerInside = false; syncInteractionPause(); });
-    scene.addEventListener('focusin', () => { focusWithin = true; syncInteractionPause(); });
-    scene.addEventListener('focusout', (event) => {
-      if (!scene.contains(event.relatedTarget)) {
-        focusWithin = false;
-        syncInteractionPause();
-      }
-    });
-    document.addEventListener('rdd:motion', (event) => { effectsDisabled = !event.detail.enabled; start(); });
-    reducedMotion.addEventListener?.('change', start);
+    reducedMotion.addEventListener('change', start);
     document.addEventListener('visibilitychange', start);
     start();
   }

@@ -8,7 +8,7 @@ La retouche éditoriale précédente n’était pas assez visible. Cette passe r
 - Accueil presque plein écran, titre central sur la photo, composition en plusieurs plans et éléments photographiques flottants sur grand écran.
 - Trois valeurs en panneaux photographiques profonds; horaires éditoriaux prioritaires; communauté et invitation en séquences alternées claires et foncées.
 - Parallaxe modérée au défilement, profondeur liée au pointeur sur les visuels non interactifs de bureau, entrées animées et points lumineux discrets. Aucun défilement détourné.
-- Commande visible « Animations » désactivant les effets et la rotation automatique, indépendamment de la pause du seul diaporama. La préférence système de mouvement réduit reste prioritaire.
+- Lecture automatique en boucle sans commandes visibles, selon la dernière demande utilisateur. Pas d’arrêt au survol ou au focus; la préférence système de mouvement réduit reste prioritaire.
 - Le titre demeure sur la photo en mobile. Les images de contenu et affiches restent entières. Rien d’essentiel ne dépend du mouvement ou du JavaScript.
 
 ## Structure
@@ -21,4 +21,4 @@ La retouche éditoriale précédente n’était pas assez visible. Cette passe r
 - `design-system/rdd/MASTER.md` : décisions de référence pour la suite.
 
 ## Limites conservées
-Aucun changement de coordonnées, horaires, biographie, source des photos, mode de dons ou politique CSP. Aucun paiement, aucune publication permanente et aucune fusion; mise à jour de la PR brouillon uniquement.
+Aucun changement de coordonnées, horaires, source des photos, mode de dons ou politique CSP. Après revue, la biographie est allégée des études, les descriptions fournies sont intégrées et les détails d’édition des événements sont retirés. Les fonds photographiques utilisent des dérivés recadrés sans bandeaux. Aucun paiement, aucune publication permanente et aucune fusion; mise à jour de la PR brouillon uniquement.

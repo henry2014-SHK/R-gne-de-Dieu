@@ -3,10 +3,8 @@
   const root = document.documentElement;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-  let userOff = false;
-  try { userOff = localStorage.getItem('rdd-effects') === 'off'; } catch (_) { /* Stockage facultatif. */ }
-  let enabled = !reduced.matches && !userOff;
-  const toggles = Array.from(document.querySelectorAll('[data-motion-toggle]'));
+  // La rotation et les effets sont automatiques; seule la préférence système les réduit.
+  let enabled = !reduced.matches;
   const runningAnimations = new Set();
   const hero = document.querySelector('.page-hero--home');
   const depthNodes = Array.from(document.querySelectorAll('[data-depth]'));
@@ -98,16 +96,8 @@
     }
   };
   const syncMotion = () => {
-    enabled = !reduced.matches && !userOff;
+    enabled = !reduced.matches;
     root.classList.toggle('effects-off', !enabled);
-    for (const toggle of toggles) {
-      toggle.hidden = false;
-      toggle.disabled = reduced.matches;
-      toggle.setAttribute('aria-pressed', String(enabled));
-      toggle.setAttribute('aria-label', reduced.matches ? 'Animations désactivées selon votre préférence système' : enabled ? 'Désactiver les animations' : 'Activer les animations');
-      const label = toggle.querySelector('[data-motion-label]');
-      if (label) label.textContent = reduced.matches ? 'Mouvement réduit' : enabled ? 'Animations actives' : 'Animations arrêtées';
-    }
     if (!enabled) {
       for (const animation of runningAnimations) animation.cancel();
       runningAnimations.clear();
@@ -117,11 +107,6 @@
     syncCanvas();
     requestScroll();
   };
-  toggles.forEach(toggle => toggle.addEventListener('click', () => {
-    userOff = !userOff;
-    try { localStorage.setItem('rdd-effects', userOff ? 'off' : 'on'); } catch (_) { /* Préférence toujours effective dans cette page. */ }
-    syncMotion();
-  }));
   reduced.addEventListener('change', syncMotion);
 
   if ('IntersectionObserver' in window) {
