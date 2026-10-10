@@ -11,9 +11,10 @@
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/immersive.css">
+  <link rel="stylesheet" href="assets/css/parcours.css">
   <title>Événements | Église Règne de Dieu</title>
 </head>
-<body>
+<body class="has-mobile-links">
 <a class="skip-link" href="#main">Aller au contenu</a>
 <header class="site-header"><div class="container header-inner">
   <a class="brand" href="index.html" aria-label="Église Règne de Dieu — accueil">
@@ -27,7 +28,12 @@
   <section class="page-hero"><div class="container"><p class="eyebrow">Vie de l’église</p><h1>Programmes et événements</h1><p>Conduire les âmes à Christ, former des disciples, restaurer les vies et les familles, et étendre le Royaume de Dieu pour sa gloire.</p></div>
 
   </section>
-  <section class="section section--white"><div class="container">
+  <nav class="event-categories container" aria-label="Catégories des événements">
+    <a href="#chaque-semaine"><span>01</span> Chaque semaine <span aria-hidden="true">↓</span></a>
+    <a href="#conventions-rencontres"><span>02</span> Conventions et rencontres <span aria-hidden="true">↓</span></a>
+  </nav>
+  <section class="section section--white event-category-section" id="chaque-semaine" aria-labelledby="weekly-heading"><div class="container">
+    <div class="section-heading"><p class="kicker">Les rendez-vous réguliers</p><h2 id="weekly-heading">Chaque semaine</h2><p>Trois cultes pour nous retrouver dans la louange, la Parole et la prière.</p></div>
     <div class="card-grid event-grid">
       <article class="card event-card" id="culte-enseignement" aria-labelledby="culte-enseignement-title">
         <figure class="event-poster">
@@ -80,6 +86,11 @@
 
         </div>
       </article>
+    </div>
+  </div></section>
+  <section class="section section--soft event-category-section" id="conventions-rencontres" aria-labelledby="conventions-heading"><div class="container">
+    <div class="section-heading"><p class="kicker">Les grands rassemblements</p><h2 id="conventions-heading">Conventions et rencontres</h2><p>Les temps forts qui rassemblent la communauté autour de la vision de l’église.</p></div>
+    <div class="card-grid event-grid">
       <article class="card event-card" id="convention-femmes" aria-labelledby="convention-femmes-title">
         <figure class="event-poster">
           <img class="event-poster-image" src="assets/images/convention.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="Affiche de la Convention des femmes du royaume">
@@ -170,6 +181,12 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> Église Règne de Dieu</span><span>Ce site ne traite aucun paiement et ne collecte aucune donnée bancaire.</span></div>
 </div></footer>
+<nav class="mobile-quick-links" aria-label="Accès rapides">
+  <a href="nos%20cultes.html" data-quick-cultes><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 8 5 4-5 4Z"/></svg><span>Cultes</span></a>
+  <a href="https://maps.app.goo.gl/auCexUBLsVgvCBBv7" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Itinéraire</span></a>
+  <a href="contacts.html" data-quick-contact><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Contact</span></a>
+</nav>
+
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/immersive.js" defer></script>
 </body>

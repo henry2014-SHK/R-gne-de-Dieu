@@ -11,9 +11,10 @@
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/immersive.css">
+  <link rel="stylesheet" href="assets/css/parcours.css">
   <title>Nos cultes | Église Règne de Dieu</title>
 </head>
-<body>
+<body class="has-mobile-links">
 <a class="skip-link" href="#main">Aller au contenu</a>
 <header class="site-header"><div class="container header-inner">
   <a class="brand" href="index.html" aria-label="Église Règne de Dieu — accueil">
@@ -72,17 +73,29 @@
     <p class="live-privacy">Le lecteur est fourni par YouTube. La connexion à YouTube s’établit lorsque cet espace apparaît à l’écran.</p>
   </div>
 </section>
-<section class="section section--soft replay-section" aria-labelledby="replays-heading">
-  <div class="container replay-layout">
-    <div class="replay-copy">
-      <p class="kicker">Les messages de l’église</p>
-      <h2 id="replays-heading">Revoir les cultes précédents</h2>
-      <p>Retrouvez les prédications et les célébrations sur la chaîne Prophète Valéry Koj TV.</p>
-      <a class="online-link" href="https://youtu.be/O9jq4jyrtUs" target="_blank" rel="noopener noreferrer">Voir cette vidéo sur YouTube <span aria-hidden="true">↗</span></a>
+<section class="section section--soft replay-section" id="rediffusions" aria-labelledby="replays-heading">
+  <div class="container">
+    <div class="replay-intro"><div class="section-heading"><p class="kicker">Les messages de l’église</p><h2 id="replays-heading">Revoir les cultes précédents</h2><p>Choisissez un message pour poursuivre votre temps de foi. Retrouvez les enseignements, la prière et les célébrations de Prophète Valéry Koj TV.</p></div><a class="replay-all-link" href="https://www.youtube.com/playlist?list=UUo1XCDNhFb-DUzr1VYmo8yw" target="_blank" rel="noopener noreferrer" data-replay-playlist>Toutes les vidéos <span aria-hidden="true">↗</span></a></div>
+    <div class="replay-viewer" id="replay-viewer">
+      <div class="youtube-frame replay-player"><iframe id="rdd-replay-video" src="https://www.youtube-nocookie.com/embed/videoseries?list=UUo1XCDNhFb-DUzr1VYmo8yw" title="Rediffusions et vidéos de Prophète Valery Koj TV" width="960" height="540" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe></div>
+      <div class="replay-current"><p id="replay-current-title" tabindex="-1">Toutes les vidéos de la chaîne</p><a href="https://www.youtube.com/playlist?list=UUo1XCDNhFb-DUzr1VYmo8yw" target="_blank" rel="noopener noreferrer" data-replay-external>Ouvrir sur YouTube <span aria-hidden="true">↗</span></a></div>
+      <p class="replay-status" role="status" aria-live="polite" data-replay-status></p>
     </div>
-    <div class="youtube-frame replay-player">
-      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUo1XCDNhFb-DUzr1VYmo8yw" title="Rediffusions et vidéos de Prophète Valery Koj TV" width="960" height="540" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+    <div class="replay-catalog" aria-label="Sélection de messages">
+      <a class="replay-choice" href="https://www.youtube.com/watch?v=bK7AS9bM4u0" target="_blank" rel="noopener noreferrer" data-replay-id="bK7AS9bM4u0" data-replay-title="Comprendre le Royaume">
+        <div class="replay-choice-image"><img src="assets/images/replay-bK7AS9bM4u0.webp" width="480" height="360" alt="" loading="lazy" decoding="async"><span class="replay-play" aria-hidden="true">▶</span></div>
+        <div class="replay-choice-copy"><span class="replay-theme">Enseignement</span><h3>Comprendre le Royaume</h3><p>Prophète Valéry Koj</p><span class="replay-choice-action">Regarder le message <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="replay-choice" href="https://www.youtube.com/watch?v=nADxP-LARyc" target="_blank" rel="noopener noreferrer" data-replay-id="nADxP-LARyc" data-replay-title="Culte de prière">
+        <div class="replay-choice-image"><img src="assets/images/replay-nADxP-LARyc.webp" width="480" height="360" alt="" loading="lazy" decoding="async"><span class="replay-play" aria-hidden="true">▶</span></div>
+        <div class="replay-choice-copy"><span class="replay-theme">Prière</span><h3>Culte de prière</h3><p>Prophète Valéry Koj</p><span class="replay-choice-action">Regarder le message <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="replay-choice" href="https://www.youtube.com/watch?v=Faf9NOT7gP8" target="_blank" rel="noopener noreferrer" data-replay-id="Faf9NOT7gP8" data-replay-title="Moi et ma maison, nous servirons l’Éternel">
+        <div class="replay-choice-image"><img src="assets/images/replay-Faf9NOT7gP8.webp" width="480" height="360" alt="" loading="lazy" decoding="async"><span class="replay-play" aria-hidden="true">▶</span></div>
+        <div class="replay-choice-copy"><span class="replay-theme">Culte dominical</span><h3>Moi et ma maison, nous servirons l’Éternel</h3><p>Prophète Valéry Koj</p><span class="replay-choice-action">Regarder le message <span aria-hidden="true">→</span></span></div>
+      </a>
     </div>
+    <p class="replay-footnote">La lecture démarre avec la commande du lecteur YouTube. <a href="https://youtu.be/O9jq4jyrtUs" target="_blank" rel="noopener noreferrer">Revoir aussi la célébration de l’anniversaire <span aria-hidden="true">↗</span></a></p>
   </div>
 </section>
 <section class="section section--white" id="horaires"><div class="container"><div class="section-heading"><p class="kicker">Cette semaine</p><h2>Les cultes de l’église</h2><p>Les horaires peuvent évoluer. Pour éviter tout déplacement inutile, contactez-nous avant votre venue.</p></div>
@@ -136,9 +149,16 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> Église Règne de Dieu</span><span>Ce site ne traite aucun paiement et ne collecte aucune donnée bancaire.</span></div>
 </div></footer>
+<nav class="mobile-quick-links" aria-label="Accès rapides">
+  <a href="nos%20cultes.html" data-quick-cultes><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 8 5 4-5 4Z"/></svg><span>Cultes</span></a>
+  <a href="https://maps.app.goo.gl/auCexUBLsVgvCBBv7" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Itinéraire</span></a>
+  <a href="contacts.html" data-quick-contact><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Contact</span></a>
+</nav>
+
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/immersive.js" defer></script>
 <script src="assets/js/live.js" defer></script>
 <script src="assets/js/faith-gallery.js" defer></script>
+<script src="assets/js/replays.js" defer></script>
 </body>
 </html>

@@ -58,3 +58,11 @@
 ## Doctrine des Saintes Écritures
 
 - [x] Remplacer le bloc « Comprendre le baptême » par « La doctrine des Saintes Écritures », avec les fondements d’Hébreux 6:1-2 : renoncement aux œuvres mortes, foi en Dieu, doctrine des baptêmes, imposition des mains, résurrection des morts et jugement éternel. Harmoniser l’introduction et la description de la page; conserver l’évangélisation, le discipolat, les leçons d’affermissement et le brouillon.
+
+## Améliorations 1 à 4 — 10 octobre 2026
+
+- [x] Accueillir les nouveaux visiteurs sur l’accueil avec « Vous venez pour la première fois ? », les horaires dimanche 9 h–12 h 30, mardi/jeudi 17 h–19 h 20, Préparer ma visite, itinéraire Google Maps fourni et contact existant. Compléter le parcours de visite sans données ni services inventés.
+- [x] Séparer les événements en « Chaque semaine » et « Conventions et rencontres », garder les sept affiches entières, textes, objectifs, ancres et ordre des cartes (mardi, jeudi, dimanche); ne pas remettre les paragraphes de dates/lieux retirés.
+- [x] Ajouter trois rediffusions vérifiées de la chaîne officielle avec vignette, titre et thème enseignement/prière/culte dominical. Choix dans le lecteur des rediffusions, sans remplacer ni interrompre le direct. Conserver playlist, vidéo précédente, plein écran et attente RDD TV. Pas d’autoplay sonore, cartes utilisables sans JavaScript.
+- [x] Ajouter des accès mobiles discrets Cultes/Itinéraire/Contact, au moins 44 px, sans couvrir le contenu ni le focus, avec safe-area et plein écran pris en compte. Alléger les effets sur téléphone sans supprimer les rotations automatiques demandées ni le mouvement réduit système.
+- [x] Sauvegarder les quatre améliorations sur une PR brouillon distincte depuis main, préserver la PR dons #11, l’adresse, les coordonnées, les horaires, la mission/vision et les textes validés; ne pas fusionner, publier, activer un paiement ou traiter le point 5.
