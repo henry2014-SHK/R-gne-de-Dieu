@@ -3,6 +3,8 @@
   const root = document.documentElement;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const mobile = window.matchMedia('(max-width: 720px)');
+  const depthAllowed = () => finePointer.matches && !mobile.matches;
   // La rotation et les effets sont automatiques; seule la préférence système les réduit.
   let enabled = !reduced.matches;
   const runningAnimations = new Set();
@@ -27,7 +29,9 @@
   const drawPoints = (time) => {
     if (!context || !canvasWidth) return;
     context.clearRect(0, 0, canvasWidth, canvasHeight);
-    for (const point of points) {
+    const count = mobile.matches ? 18 : points.length;
+    for (let i = 0; i < count; i += 1) {
+      const point = points[i];
       const t = enabled ? time / 1000 : 0;
       const y = ((point.y - t * point.speed) % 1 + 1) % 1;
       const x = point.x + Math.sin(t * .12 + point.y * 8) * .015;
@@ -42,7 +46,7 @@
   const canvasTick = (time) => {
     canvasFrame = 0;
     if (!enabled || !heroVisible || document.hidden || !context) return;
-    if (time - lastCanvasTime >= 32) {
+    if (time - lastCanvasTime >= (mobile.matches ? 50 : 32)) {
       lastCanvasTime = time;
       drawPoints(time);
     }
@@ -57,7 +61,7 @@
   const resizeCanvas = () => {
     if (!canvas || !context) return;
     const box = canvas.getBoundingClientRect();
-    const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+    const ratio = Math.min(window.devicePixelRatio || 1, mobile.matches ? 1 : 1.5);
     canvasWidth = box.width; canvasHeight = box.height;
     canvas.width = Math.round(canvasWidth * ratio);
     canvas.height = Math.round(canvasHeight * ratio);
@@ -68,23 +72,25 @@
   const updateScroll = () => {
     scrollFrame = 0;
     if (!enabled || document.hidden) return;
+    let heroBox = null;
     if (hero && !('IntersectionObserver' in window)) {
-      const box = hero.getBoundingClientRect();
-      const visible = box.bottom > 0 && box.top < innerHeight;
+      heroBox = hero.getBoundingClientRect();
+      const visible = heroBox.bottom > 0 && heroBox.top < innerHeight;
       if (visible !== heroVisible) { heroVisible = visible; syncCanvas(); }
     }
-    if (hero && heroVisible) {
-      const box = hero.getBoundingClientRect();
-      hero.style.setProperty('--scene-shift', `${Math.min(75, Math.max(0, -box.top * .12))}px`);
-    }
-    // Très peu de couches actives; aucune mesure par particule.
+    if (!depthAllowed()) return;
+    if (hero && heroVisible) heroBox = heroBox || hero.getBoundingClientRect();
+    // Mesurer toutes les couches avant d’écrire leurs transformations.
+    const shifts = [];
     for (const node of depthNodes) {
       const box = node.getBoundingClientRect();
       if (box.bottom <= 0 || box.top >= innerHeight) continue;
       const speed = Number(node.dataset.depth) || .025;
       const shift = Math.max(-22, Math.min(22, (innerHeight * .5 - box.top - box.height * .5) * speed));
-      node.style.setProperty('--depth-y', `${shift}px`);
+      shifts.push([node, shift]);
     }
+    if (heroBox && heroVisible) hero.style.setProperty('--scene-shift', `${Math.min(75, Math.max(0, -heroBox.top * .12))}px`);
+    for (const [node, shift] of shifts) node.style.setProperty('--depth-y', `${shift}px`);
   };
   const requestScroll = () => {
     if (enabled && !scrollFrame) scrollFrame = requestAnimationFrame(updateScroll);
@@ -133,7 +139,7 @@
   }
   for (const node of depthNodes) {
     node.addEventListener('pointermove', event => {
-      if (!enabled || !finePointer.matches || event.pointerType === 'touch') return;
+      if (!enabled || !depthAllowed() || event.pointerType === 'touch') return;
       const box = node.getBoundingClientRect();
       const x = (event.clientX - box.left) / box.width - .5;
       const y = (event.clientY - box.top) / box.height - .5;
@@ -148,7 +154,17 @@
     });
   }
   window.addEventListener('scroll', requestScroll, { passive: true });
-  window.addEventListener('resize', () => { resizeCanvas(); requestScroll(); }, { passive: true });
+  let resizeFrame = 0;
+  window.addEventListener('resize', () => {
+    if (resizeFrame) return;
+    resizeFrame = requestAnimationFrame(() => {
+      resizeFrame = 0;
+      resizeCanvas(); requestScroll();
+    });
+  }, { passive: true });
+  const syncDepth = () => { resetDepth(); resizeCanvas(); requestScroll(); };
+  mobile.addEventListener('change', syncDepth);
+  finePointer.addEventListener('change', syncDepth);
   document.addEventListener('visibilitychange', () => { syncCanvas(); requestScroll(); });
   resizeCanvas(); syncMotion();
 })();

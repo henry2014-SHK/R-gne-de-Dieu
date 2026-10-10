@@ -2,6 +2,17 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const quickLinks = document.querySelector('.mobile-quick-links');
+  if (quickLinks) {
+    document.body.classList.add('has-mobile-links');
+    const page = decodeURIComponent(location.pathname).split('/').pop();
+    if (page === 'nos cultes.html') quickLinks.querySelector('[data-quick-cultes]')?.setAttribute('aria-current', 'page');
+    if (page === 'contacts.html') quickLinks.querySelector('[data-quick-contact]')?.setAttribute('aria-current', 'page');
+    const syncFullscreen = () => document.documentElement.classList.toggle('player-fullscreen', Boolean(document.fullscreenElement));
+    document.addEventListener('fullscreenchange', syncFullscreen);
+    syncFullscreen();
+  }
+
   const countdown = document.querySelector('[data-next-service]');
   if (countdown) {
     const timezone = 'Africa/Lubumbashi';
@@ -89,6 +100,7 @@
     button.setAttribute('aria-expanded', String(open));
     button.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
     nav.classList.toggle('is-open', open);
+    document.documentElement.classList.toggle('menu-open', open);
   };
   button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
   nav.addEventListener('click', (event) => {
